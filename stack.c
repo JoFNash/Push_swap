@@ -1,7 +1,5 @@
-#include <stdlib.h>
-#include <unistd.h>
-#include "../Libft/libft.h"
 #include "push_swap.h"
+#include "Libft/libft.h"
 
 struct s_stack* Init_stack(int value)
 {
@@ -18,34 +16,43 @@ struct s_stack* Init_stack(int value)
     return (Stack);
 }
 
-struct s_stack *stack_add(struct s_storage *storage, int value, char stack_name)
+void    Add_stack(p_storage **storage, p_stack **top, int value)
 {
-    struct s_stack     **top;
-    struct s_stack      *tmp;
+    p_stack      *tmp;
+    p_stack      *new_top;
 
-    if (stack_name == 'a')
-        top = &storage->a;
-    else
-        top = &storage->b;
-    if (*top == NULL)
+    if (*top == NULL) /* если стек пустой */
     {
-        *top = (struct s_stack*)malloc(sizeof(struct s_stack));
+        *top = (p_stack*)malloc(sizeof(p_stack));
         if (!(*top))
             error_actions(storage);
-        (*top)->next = *top;
-        (*top)->prev = *top;
-        (*top)->value = value;   
+        (*top)->next = NULL;
+        (*top)->prev = NULL;
+        (*top)->value = value;
     }
-    else
+    else /* если не пустой */
     {
-        tmp = (struct s_stack*)malloc(sizeof(struct s_stack));
-        if (!tmp)
+        new_top = (p_stack*)malloc(sizeof(p_stack));
+        if (!new_top)
             error_actions(storage);
-        tmp->next = (*top);
-        tmp->prev = (*top)->prev;
-        (*top)->prev = tmp;
-        tmp->prev->next = tmp;                          // ?
-        tmp->value = value;
+        tmp = *top;
+        *top = new_top;
+        new_top->next = tmp;
+        tmp->prev = *top;
+        new_top->value = value;
+    }
+}
+
+void Show_stack(p_storage * storage) /* здесь передали копию! одна звезда! */
+{
+    p_stack *stack;
+
+    stack = storage->a;
+    while (stack != NULL)
+    {
+        ft_putnbr_fd(stack->value, 1);
+        ft_putchar_fd('\n', 1);
+        stack = stack->next;
     }
 }
 

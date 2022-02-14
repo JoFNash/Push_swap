@@ -1,7 +1,9 @@
 #include "push_swap.h"
 
-p_storage   *create_storage(p_storage   *storage, char **argv)
+p_storage   *create_storage(char **argv)
 {
+    p_storage   *storage;
+
     storage = (p_storage *)malloc(sizeof(p_storage));
     if (!storage)
         return (NULL);
