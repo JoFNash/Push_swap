@@ -8,7 +8,7 @@ void free_storage(p_storage **storage)
             free_stack(&((*storage)->a));
         if ((*storage)->b)
             free_stack(&((*storage)->b));
-        free(*storage); // чистим значение указателя
+        free(*storage);
     }
 }
 
@@ -18,7 +18,5 @@ void free_stack(p_stack **stack)
     (*stack)->order = 0;
     (*stack)->flag = 0;
 
-    /* 
-	очистка стека a 
-	*/
+
 }

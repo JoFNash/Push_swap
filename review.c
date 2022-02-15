@@ -1,5 +1,6 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
+#include <stdio.h>
 
 /* review calls fill_stack_a() and check_sort_a() to check if stack a is sorted */
 void review(p_storage **storage)
@@ -23,7 +24,7 @@ void fill_stack_a(p_storage **storage)
     find_errors(storage);
     fill(storage, string, i, j);
     Show_stack(*storage);
-    //check_duplicates(storage);
+    // check_duplicates(storage);
 }
 
 /* find_errors checks argv on error: invalid characters */
@@ -56,24 +57,19 @@ void find_errors(p_storage **storage)
 void    fill(p_storage **storage, char *str, size_t i, size_t j)
 {
     long int number_checked_on_int;
-
-    //ft_putchar_fd('a', 1);
-    //sleep(1.5);
+    size_t k = 1;
 
     while (str)
     {
         number_checked_on_int = ft_atoi(str);
-        //ft_putnbr_fd(number_checked_on_int, 1);
         if (number_checked_on_int > INT_MAX || number_checked_on_int < INT_MIN)
             error_actions(storage);
         else
         {
-            Add_stack(storage, &((*storage)->a), number_checked_on_int);
-            //sleep(1.5);
-            //ft_putchar_fd('s', 1);
-            //sleep(1);
+            Add_stack_end(storage, &((*storage)->a), number_checked_on_int);
         }
         str = (*storage)->argv[++i];
+        k++;
     }
 }
 

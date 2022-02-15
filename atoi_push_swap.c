@@ -3,4 +3,5 @@
 int atoi_push_swap(char *str, p_storage **storage)
 {
 
+    return (0);
 }

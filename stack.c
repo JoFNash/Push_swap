@@ -16,12 +16,12 @@ struct s_stack* Init_stack(int value)
     return (Stack);
 }
 
-void    Add_stack(p_storage **storage, p_stack **top, int value)
+void    Add_stack_top(p_storage **storage, p_stack **top, int value)
 {
     p_stack      *tmp;
     p_stack      *new_top;
 
-    if (*top == NULL) /* если стек пустой */
+    if (*top == NULL) /* if stack is free */
     {
         *top = (p_stack*)malloc(sizeof(p_stack));
         if (!(*top))
@@ -30,7 +30,7 @@ void    Add_stack(p_storage **storage, p_stack **top, int value)
         (*top)->prev = NULL;
         (*top)->value = value;
     }
-    else /* если не пустой */
+    else /* if stack is NOT free */
     {
         new_top = (p_stack*)malloc(sizeof(p_stack));
         if (!new_top)
@@ -43,7 +43,39 @@ void    Add_stack(p_storage **storage, p_stack **top, int value)
     }
 }
 
-void Show_stack(p_storage * storage) /* здесь передали копию! одна звезда! */
+void    Add_stack_end(p_storage **storage, p_stack **top, int value)
+{
+    p_stack      *tmp;
+    p_stack      *new_tail;
+
+    if (*top == NULL) /* if stack is free */
+    {
+        *top = (p_stack*)malloc(sizeof(p_stack));
+        if (!(*top))
+            error_actions(storage);
+        (*top)->next = NULL;
+        (*top)->prev = NULL;
+        (*top)->value = value;
+    }
+    else /* if stack is NOT free */
+    {
+        new_tail = (p_stack *)malloc(sizeof(p_stack));
+        if (!new_tail)
+            error_actions(storage);
+        new_tail->value = value;
+        tmp = *top;
+        while (tmp->next != NULL)
+        {
+            tmp = tmp->next;
+        }
+
+        tmp->next = new_tail;
+        new_tail->prev = tmp;
+        new_tail->next = NULL;
+    }
+}
+
+void Show_stack(p_storage * storage)
 {
     p_stack *stack;
 
