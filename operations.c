@@ -65,9 +65,7 @@ void rotate_a(p_storage **storage)
 {
     int value;
 
-    printf("%d = %d", (*storage)->a->value, (*storage)->a->next->value);
-
-    if ((*storage)->a && /* проверка на одно значение в стеке */)
+    if ((*storage)->a && (*storage)->a->next != NULL)
     {
         Remove_top_stack(storage, &((*storage)->a), &value);
         Add_stack_end(storage, &((*storage)->a), value);
@@ -78,7 +76,7 @@ void rotate_b(p_storage **storage)
 {
     int value;
 
-    if ((*storage)->b)
+    if ((*storage)->b && (*storage)->b->next != NULL)
     {
         Remove_top_stack(storage, &((*storage)->b), &value);
         Add_stack_end(storage, &((*storage)->b), value);
