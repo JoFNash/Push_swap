@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-struct s_stack* Init_stack(int value)
+p_stack* Init_stack(int value)
 {
     struct s_stack *Stack;
 
@@ -68,7 +68,6 @@ void    Add_stack_end(p_storage **storage, p_stack **top, int value)
         {
             tmp = tmp->next;
         }
-
         tmp->next = new_tail;
         new_tail->prev = tmp;
         new_tail->next = NULL;
@@ -79,7 +78,17 @@ void Show_stack(p_storage * storage)
 {
     p_stack *stack;
 
+    write(1, "Stack a: \n", 11);
     stack = storage->a;
+    while (stack != NULL)
+    {
+        ft_putnbr_fd(stack->value, 1);
+        ft_putchar_fd('\n', 1);
+        stack = stack->next;
+    }
+
+    write(1, "\nStack b: \n", 12);
+    stack = storage->b;
     while (stack != NULL)
     {
         ft_putnbr_fd(stack->value, 1);
@@ -88,15 +97,16 @@ void Show_stack(p_storage * storage)
     }
 }
 
-void Remove()
+void Remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)
 {
+    p_stack *tmp;
 
-}
-
-void Remove_top_stack(p_storage **storage, p_stack ** top, int remove_value)
-{
-    if (*top != NULL)
+    tmp = (*top);
+    if (tmp != NULL)
     {
-        
+        *remove_value = tmp->value;
+        (*top) = (*top)->next;
+        (*top)->prev = NULL;
+        free(tmp);
     }
 }

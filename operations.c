@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include "stdio.h"
 
 /* allowed operations for stacks a and b */
 void swap_a(p_storage **storage)
@@ -35,33 +36,53 @@ void swap_a_and_b(p_storage **storage)
 {
     swap_a(storage);
     swap_b(storage);
-    write("ss");
+    write(1, "ss\n", 3);
 }
 
 void push_a(p_storage **storage)
 {
     int value_b;
 
-    if (storage->b)
+    if ((*storage)->b)
     {
-        Remove_top_stack(storage, &((*storage)->b), value_b);
-        Add_stack_top(storage, &((*storage)->b), value_b);
+        Remove_top_stack(storage, &((*storage)->b), &value_b);
+        Add_stack_top(storage, &((*storage)->a), value_b);
     }
 }
 
 void push_b(p_storage **storage)
 {
-    
+    int value_a;
+
+    if ((*storage)->a)
+    {
+        Remove_top_stack(storage, &((*storage)->a), &value_a);
+        Add_stack_top(storage, &((*storage)->b), value_a);
+    }
 }
 
 void rotate_a(p_storage **storage)
 {
-    
+    int value;
+
+    printf("%d = %d", (*storage)->a->value, (*storage)->a->next->value);
+
+    if ((*storage)->a && /* проверка на одно значение в стеке */)
+    {
+        Remove_top_stack(storage, &((*storage)->a), &value);
+        Add_stack_end(storage, &((*storage)->a), value);
+    }
 }
 
 void rotate_b(p_storage **storage)
 {
-    
+    int value;
+
+    if ((*storage)->b)
+    {
+        Remove_top_stack(storage, &((*storage)->b), &value);
+        Add_stack_end(storage, &((*storage)->b), value);
+    }
 }
 
 void rotate_a_and_b(p_storage **storage)

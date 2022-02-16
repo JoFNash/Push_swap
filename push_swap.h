@@ -63,8 +63,9 @@ void check_sort_a(p_storage **storage);
 void fill_stack_a(p_storage **storage);
 void fill(p_storage **storage, char *str, size_t i, size_t j);
 void Show_stack(struct s_storage *storage);
-void    Add_stack_top(p_storage **storage, p_stack **top, int value);
-void    Add_stack_end(p_storage **storage, p_stack **top, int value);
+void Add_stack_top(p_storage **storage, p_stack **top, int value);
+void Add_stack_end(p_storage **storage, p_stack **top, int value);
+void Remove_top_stack(p_storage **storage, p_stack **top, int *remove_value);
 
 int atoi_push_swap(char *str, p_storage **storage);
 

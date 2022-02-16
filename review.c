@@ -18,15 +18,17 @@ void fill_stack_a(p_storage **storage)
     size_t  i;
     size_t  j;
     char*   string;
+    int m;
 
     i = 1;
     j = 0;
     string = (*storage)->argv[i];
     find_errors(storage);
     fill(storage, string, i, j);
-    Show_stack(*storage);
 
-    swap_a_and_b(storage);
+    Show_stack(*storage);
+    write(1, "-\n", 2);
+    rotate_a(storage);
     Show_stack(*storage);
 
     // check_duplicates(storage);
