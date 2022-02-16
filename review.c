@@ -8,6 +8,7 @@ void review(p_storage **storage)
     if (!storage)
         return ;
     fill_stack_a(storage);
+    
     // check_sort_a(storage);
     /* .(?). */
 }
@@ -24,6 +25,10 @@ void fill_stack_a(p_storage **storage)
     find_errors(storage);
     fill(storage, string, i, j);
     Show_stack(*storage);
+
+    swap_a_and_b(storage);
+    Show_stack(*storage);
+
     // check_duplicates(storage);
 }
 

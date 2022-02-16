@@ -93,4 +93,10 @@ void Remove()
 
 }
 
-
+void Remove_top_stack(p_storage **storage, p_stack ** top, int remove_value)
+{
+    if (*top != NULL)
+    {
+        
+    }
+}
