@@ -17,18 +17,13 @@ void fill_stack_a(p_storage **storage)
     size_t  i;
     size_t  j;
     char*   string;
-    int m;
 
     i = 1;
     j = 0;
     string = (*storage)->argv[i];
     find_errors(storage);
-    fill(storage, string, i, j);
+    fill(storage, string, i);
     show_stack(*storage);
-    //write(1, "-\n", 2);
-    //reverse_rotate_a(storage);
-    //show_stack(*storage);
-
     check_duplicates(storage);
 }
 
@@ -59,10 +54,9 @@ void find_errors(p_storage **storage)
 
 // -127 98 0 78 32 -129
 
-void    fill(p_storage **storage, char *str, size_t i, size_t j)
+void    fill(p_storage **storage, char *str, size_t i)
 {
     long int number_checked_on_int;
-    size_t k = 1;
 
     while (str)
     {
@@ -74,7 +68,6 @@ void    fill(p_storage **storage, char *str, size_t i, size_t j)
             add_stack_end(storage, &((*storage)->a), number_checked_on_int);
         }
         str = (*storage)->argv[++i];
-        k++;
     }
 }
 
@@ -108,7 +101,6 @@ void check_sort_a(p_storage **storage)
 
 void check_duplicates(p_storage **storage)
 {
-    int     num;
     p_stack *first;
     p_stack *second;
 
