@@ -16,7 +16,6 @@
         struct s_stack *prev;
     } p_stack;
 
-
     /* structure STORAGE keeps: 
     two stacks - a & b; 
     flag - it is initially 0, but it always increases by one as soon as we find mid on stack B;
@@ -61,7 +60,7 @@
     struct s_stack* init_stack(int value);
     void free_stack(p_stack **stack);
     void fill_stack_a(p_storage **storage);
-void    fill(p_storage **storage, char *str, size_t i);
+    void fill(p_storage **storage, char *str, size_t i);
     void show_stack(struct s_storage *storage);
     void add_stack_top(p_storage **storage, p_stack **top, int value);
     void add_stack_end(p_storage **storage, p_stack **top, int value);

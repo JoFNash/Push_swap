@@ -14,9 +14,17 @@ void free_storage(p_storage **storage)
 
 void free_stack(p_stack **stack)
 {
-    (*stack)->value = 0;
-    (*stack)->order = 0;
-    (*stack)->flag = 0;
+    p_stack *tmp;
+    p_stack *next;
 
-
+    tmp = (*stack);
+    next = NULL;
+    while (tmp != NULL)
+    {
+        next = tmp->next;
+        free(tmp);
+        tmp = tmp->next;
+    }
+    free(*stack);
+    (*stack) = NULL;
 }

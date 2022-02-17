@@ -10,6 +10,9 @@ void review(p_storage **storage)
     fill_stack_a(storage);
     check_sort_a(storage);
     /* .(?). */
+    show_stack(*storage);
+    free_stack(&((*storage)->a));
+    show_stack(*storage);
 }
 
 void fill_stack_a(p_storage **storage)
@@ -23,7 +26,6 @@ void fill_stack_a(p_storage **storage)
     string = (*storage)->argv[i];
     find_errors(storage);
     fill(storage, string, i);
-    show_stack(*storage);
     check_duplicates(storage);
 }
 
@@ -107,10 +109,11 @@ void check_duplicates(p_storage **storage)
     first = (*storage)->a;
     while (first != NULL)
     {
-        second = (*storage)->a;
+        second = first->next;
         while (second != NULL)
         {
-            if (first->value == second->value)
+            //printf("%d - %d\n", first->value, second->value); 
+            if (first->value == second->value) // there something 'lagalo'
             {
                 error_actions(storage); // break
             }
