@@ -29,7 +29,7 @@ void fill_stack_a(p_storage **storage)
     //reverse_rotate_a(storage);
     //show_stack(*storage);
 
-    // check_duplicates(storage);
+    check_duplicates(storage);
 }
 
 /* find_errors checks argv on error: invalid characters */
@@ -88,19 +88,39 @@ void error_actions(p_storage **storage)
 
 void check_sort_a(p_storage **storage)
 {
+    p_stack     *first;
+    p_stack     *second;
+
+    first = (*storage)->a;
+    second = (*storage)->a;
+    if (!first)
+        error_actions(storage);
+	while (second->next != NULL)
+    {
+        second = second->next;
+        if (first->value >= second->value)
+            error_actions(storage); // break
+        first = first->next;
+    }
+    if (!(second->next == NULL && first->value <= second->value))
+        error_actions(storage);
+}
+
+void check_duplicates(p_storage **storage)
+{
     int     num;
     p_stack *first;
     p_stack *second;
 
     first = (*storage)->a;
-    while (first->next != NULL)
+    while (first != NULL)
     {
-        second = first->next;
-        while (second->next != NULL)
+        second = (*storage)->a;
+        while (second != NULL)
         {
             if (first->value == second->value)
             {
-                error_actions(storage);
+                error_actions(storage); // break
             }
             second = second->next;
         }
