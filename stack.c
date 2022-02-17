@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-p_stack* Init_stack(int value)
+p_stack* init_stack(int value)
 {
     struct s_stack *Stack;
 
@@ -16,7 +16,7 @@ p_stack* Init_stack(int value)
     return (Stack);
 }
 
-void    Add_stack_top(p_storage **storage, p_stack **top, int value)
+void    add_stack_top(p_storage **storage, p_stack **top, int value)
 {
     p_stack      *tmp;
     p_stack      *new_top;
@@ -43,7 +43,7 @@ void    Add_stack_top(p_storage **storage, p_stack **top, int value)
     }
 }
 
-void    Add_stack_end(p_storage **storage, p_stack **top, int value)
+void   add_stack_end(p_storage **storage, p_stack **top, int value)
 {
     p_stack      *tmp;
     p_stack      *new_tail;
@@ -74,7 +74,7 @@ void    Add_stack_end(p_storage **storage, p_stack **top, int value)
     }
 }
 
-void Show_stack(p_storage * storage)
+void show_stack(p_storage * storage)
 {
     p_stack *stack;
 
@@ -97,7 +97,7 @@ void Show_stack(p_storage * storage)
     }
 }
 
-void Remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)
+void remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)
 {
     p_stack *tmp;
 
@@ -108,5 +108,23 @@ void Remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)
         (*top) = (*top)->next;
         (*top)->prev = NULL;
         free(tmp);
+    }
+}
+
+void remove_end_stack(p_storage **storage, p_stack **top, int *remove_value)
+{
+    p_stack *tmp;
+
+    tmp = *top;
+    if (tmp != NULL)
+    {
+        while (tmp->next != NULL)
+        {
+            tmp = tmp->next;
+        }
+        *remove_value = tmp->value;
+        tmp = tmp->prev;
+        free(tmp->next);
+        tmp->next = NULL;
     }
 }

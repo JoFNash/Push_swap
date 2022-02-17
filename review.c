@@ -8,8 +8,7 @@ void review(p_storage **storage)
     if (!storage)
         return ;
     fill_stack_a(storage);
-    
-    // check_sort_a(storage);
+    check_sort_a(storage);
     /* .(?). */
 }
 
@@ -25,11 +24,10 @@ void fill_stack_a(p_storage **storage)
     string = (*storage)->argv[i];
     find_errors(storage);
     fill(storage, string, i, j);
-
-    Show_stack(*storage);
-    write(1, "-\n", 2);
-    rotate_a(storage);
-    Show_stack(*storage);
+    show_stack(*storage);
+    //write(1, "-\n", 2);
+    //reverse_rotate_a(storage);
+    //show_stack(*storage);
 
     // check_duplicates(storage);
 }
@@ -73,7 +71,7 @@ void    fill(p_storage **storage, char *str, size_t i, size_t j)
             error_actions(storage);
         else
         {
-            Add_stack_end(storage, &((*storage)->a), number_checked_on_int);
+            add_stack_end(storage, &((*storage)->a), number_checked_on_int);
         }
         str = (*storage)->argv[++i];
         k++;
@@ -90,10 +88,22 @@ void error_actions(p_storage **storage)
 
 void check_sort_a(p_storage **storage)
 {
-	
-}
+    int     num;
+    p_stack *first;
+    p_stack *second;
 
-void check_duplicates(p_storage **storage)
-{
-
+    first = (*storage)->a;
+    while (first->next != NULL)
+    {
+        second = first->next;
+        while (second->next != NULL)
+        {
+            if (first->value == second->value)
+            {
+                error_actions(storage);
+            }
+            second = second->next;
+        }
+        first = first->next;
+    }
 }
