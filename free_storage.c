@@ -8,6 +8,8 @@ void free_storage(p_storage **storage)
             free_stack(&((*storage)->a));
         if ((*storage)->b)
             free_stack(&((*storage)->b));
+        if ((*storage)->line)
+            free((*storage)->line);
         free(*storage);
     }
 }

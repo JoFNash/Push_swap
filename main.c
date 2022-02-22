@@ -7,7 +7,7 @@ int main(int argc, char **argv)
     storage = NULL;
     if (argc < 2)
         return (1);
-    storage = create_storage(argv);
+    storage = create_storage(argv, argc);
     review(&storage);
 
     return (0);

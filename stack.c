@@ -78,6 +78,7 @@ void show_stack(p_storage * storage)
 {
     p_stack *stack;
 
+    printf("---------------\n");
     write(1, "Stack a: \n", 11);
     stack = storage->a;
     while (stack != NULL)
@@ -95,6 +96,8 @@ void show_stack(p_storage * storage)
         ft_putchar_fd('\n', 1);
         stack = stack->next;
     }
+    printf("---------------\n");
+
 }
 
 void remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)

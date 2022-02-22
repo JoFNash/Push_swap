@@ -8,68 +8,13 @@ void review(p_storage **storage)
     if (!storage)
         return ;
     fill_stack_a(storage);
-    check_sort_a(storage);
-    /* .(?). */
-    show_stack(*storage);
-    free_stack(&((*storage)->a));
-    show_stack(*storage);
-}
-
-void fill_stack_a(p_storage **storage)
-{
-    size_t  i;
-    size_t  j;
-    char*   string;
-
-    i = 1;
-    j = 0;
-    string = (*storage)->argv[i];
-    find_errors(storage);
-    fill(storage, string, i);
-    check_duplicates(storage);
-}
-
-/* find_errors checks argv on error: invalid characters */
-void find_errors(p_storage **storage)
-{
-    char    *string;
-    size_t  i;
-
-    i = 1;
-    string = (*storage)->argv[i];
-    while (string)
+    if (check_sort_a(storage) == 1)
     {
-        while(*string)
-        {
-            if (*string == ' ' || ft_isdigit(*string))
-                string++;
-            else if (*string == '-' && ft_isdigit(*(string + 1)) && (string == (*storage)->argv[i] || *(string - 1) == ' '))
-                string++;
-            else if (*string == '+' && ft_isdigit(*(string + 1)) && (string == (*storage)->argv[i] || *(string - 1) == ' '))
-                string++;
-            else
-                error_actions(storage);
-        }
-        string = (*storage)->argv[++i];
+        result_actions(storage);
     }
-}
-
-// -127 98 0 78 32 -129
-
-void    fill(p_storage **storage, char *str, size_t i)
-{
-    long int number_checked_on_int;
-
-    while (str)
+    else
     {
-        number_checked_on_int = ft_atoi(str);
-        if (number_checked_on_int > INT_MAX || number_checked_on_int < INT_MIN)
-            error_actions(storage);
-        else
-        {
-            add_stack_end(storage, &((*storage)->a), number_checked_on_int);
-        }
-        str = (*storage)->argv[++i];
+        start_sort(storage);
     }
 }
 
@@ -81,7 +26,7 @@ void error_actions(p_storage **storage)
     exit(-1);
 }
 
-void check_sort_a(p_storage **storage)
+int check_sort_a(p_storage **storage)
 {
     p_stack     *first;
     p_stack     *second;
@@ -94,31 +39,12 @@ void check_sort_a(p_storage **storage)
     {
         second = second->next;
         if (first->value >= second->value)
-            error_actions(storage); // break
+            break;
         first = first->next;
     }
-    if (!(second->next == NULL && first->value <= second->value))
-        error_actions(storage);
+    if (second->next == NULL && first->value <= second->value)
+        return (1);
+    return (0);
 }
 
-void check_duplicates(p_storage **storage)
-{
-    p_stack *first;
-    p_stack *second;
 
-    first = (*storage)->a;
-    while (first != NULL)
-    {
-        second = first->next;
-        while (second != NULL)
-        {
-            //printf("%d - %d\n", first->value, second->value); 
-            if (first->value == second->value) // there something 'lagalo'
-            {
-                error_actions(storage); // break
-            }
-            second = second->next;
-        }
-        first = first->next;
-    }
-}
