@@ -70,7 +70,7 @@ p_storage   *create_storage(char **argv, int argc);
     void error_actions(p_storage **storage);
     void check_duplicates(p_storage **storage);
     void result_actions(p_storage **storage);
-void check_line_on_duplicates(char *line);
+	void check_line_on_duplicates(char *line);
 
     /* stacks functions */
     struct s_stack* init_stack(int value);
@@ -96,5 +96,11 @@ void check_line_on_duplicates(char *line);
 	void start_big_sort(p_storage **storage);
 
 	int min_value_stack(p_stack * stack);
+
+	/* array (array to get order for all numbers) functions */
+void    fill_array(p_storage ** storage);
+void	sort_array(int **array, size_t size);
+	void print_array(int * arrray, int n);
+	void	assign_order_to_numbers(p_storage **storage, int *array, int size);
 
     #endif

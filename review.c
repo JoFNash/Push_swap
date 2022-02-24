@@ -46,5 +46,3 @@ int check_sort_a(p_storage **storage)
         return (1);
     return (0);
 }
-
-

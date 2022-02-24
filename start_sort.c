@@ -111,5 +111,5 @@ void sort_5_elems(p_storage **storage)
 
 void start_big_sort(p_storage **storage)
 {
-
+	fill_array(storage);
 }
