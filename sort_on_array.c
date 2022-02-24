@@ -19,9 +19,7 @@ void    fill_array(p_storage ** storage)
 		stack = stack->next;
 		i++;
 	}
-	print_array(array, (int)((*storage)->argc));
 	sort_array(&array, ((*storage)->argc));
-	print_array(array, (int)((*storage)->argc));
 	assign_order_to_numbers(storage, array, (int)((*storage)->argc));
 	show_stack(*storage);
 }
