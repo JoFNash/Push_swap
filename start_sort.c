@@ -93,7 +93,6 @@ void sort_4_elems(p_storage **storage)
 		if (stack->value == min)
 		{
 			push_b(storage);
-			show_stack(*storage);
 			break ;
 		}
 		stack = stack->next;
@@ -107,10 +106,27 @@ void sort_4_elems(p_storage **storage)
 
 void sort_5_elems(p_storage **storage)
 {
+	int min;
+	p_stack *stack;
 
+	min = min_value_stack((*storage)->a);
+	stack = (*storage)->a;
+	while (stack != NULL)
+	{
+		if (stack->value == min)
+		{
+			push_b(storage);
+			break ;
+		}
+		stack = stack->next;
+		rotate_a(storage);
+	}
+	sort_4_elems(storage);
+	push_a(storage);
 }
 
 void start_big_sort(p_storage **storage)
 {
 	fill_array(storage);
+	
 }
