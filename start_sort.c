@@ -77,6 +77,8 @@ void do_sort_3_elems(p_storage** storage, int first, int second, int third)
 		swap_a(storage);
 		reverse_rotate_a(storage);
 	}
+	show_stack(*storage);
+
 }
 
 void sort_4_elems(p_storage **storage)
@@ -85,24 +87,23 @@ void sort_4_elems(p_storage **storage)
 	p_stack *stack;
 
 	min = min_value_stack((*storage)->a);
-	printf("min = %d\n", min);
 	stack = (*storage)->a;
 	while (stack != NULL)
 	{
 		if (stack->value == min)
 		{
 			push_b(storage);
-			printf("ahahhah\n");
+			show_stack(*storage);
 			break ;
 		}
-		
-		printf("stack->value = %d\n", stack->value);
 		stack = stack->next;
 		rotate_a(storage);
 	}
 	sort_3_elems(storage);
 	push_a(storage);
 }
+
+// 9 -7 2 0
 
 void sort_5_elems(p_storage **storage)
 {

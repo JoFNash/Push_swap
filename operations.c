@@ -24,6 +24,7 @@ void swap_a_and_b(p_storage **storage)
     ft_putstr_fd("ss\n", 1);
 }
 
+/* padaet! */
 void push_a(p_storage **storage)
 {
     do_push_a(storage);

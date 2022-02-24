@@ -105,7 +105,14 @@ void remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)
     p_stack *tmp;
 
     tmp = (*top);
-    if (tmp != NULL)
+	if (tmp->next == NULL)
+	{
+		*remove_value = tmp->value;
+		(*top)->next = NULL;
+		(*top)->prev = NULL;
+		free(tmp);
+	}
+    if (tmp->next != NULL)
     {
         *remove_value = tmp->value;
         (*top) = (*top)->next;
