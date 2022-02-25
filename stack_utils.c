@@ -138,3 +138,50 @@ void remove_end_stack(p_storage **storage, p_stack **top, int *remove_value)
         tmp->next = NULL;
     }
 }
+
+int size_of_stack(p_stack *stack)
+{
+    int size;
+
+    size = 0;
+    if (stack->next == NULL)
+        return (1);
+    while (stack != NULL)
+    {
+        size++;
+        stack = stack->next;
+    }
+    return (size);
+}
+
+int max_elem_in_stack(p_stack *stack)
+{
+    int max;
+
+    if (stack)
+    {
+        max = stack->value;
+        while (stack != NULL)
+        {
+            if (stack->value > max)
+                max = stack->value;
+            stack = stack->next;
+        }
+    }
+    return (max);
+}
+
+int elem_upper_middle(p_stack *stack, int size, int value)
+{
+    int i;
+
+    i = 0;
+    while (stack->order != value)
+    {
+        stack = stack->next;
+        i++;
+    }
+    if (i >= size / 2)
+        return (1);
+    return (0);
+}

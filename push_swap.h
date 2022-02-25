@@ -84,6 +84,10 @@ p_storage   *create_storage(char **argv, int argc);
     void remove_end_stack(p_storage **storage, p_stack **top, int *remove_value);
     int check_sort_a(p_storage **storage);
     int atoi_push_swap(char *str, p_storage **storage);
+    int size_of_stack(p_stack *stack);
+    int max_elem_in_stack(p_stack *stack);
+    int elem_upper_middle(p_stack *stack, int size, int value);
+    	int min_value_stack(p_stack * stack);
 
 	/* sort functions */
 	void start_sort(p_storage **storage);
@@ -94,8 +98,9 @@ p_storage   *create_storage(char **argv, int argc);
 	void sort_4_elems(p_storage **storage);
 	void sort_5_elems(p_storage **storage);
 	void start_big_sort(p_storage **storage);
+    void butterfly_sort(p_storage **storage, int deviation);
+    void butterfly_return_sort(p_storage **storage);
 
-	int min_value_stack(p_stack * stack);
 
 	/* array (array to get order for all numbers) functions */
 void    fill_array(p_storage ** storage);
