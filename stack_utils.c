@@ -13,7 +13,6 @@ p_stack* init_stack(int value)
     Stack->prev = NULL;
     Stack->next = NULL;
     Stack->order = 0;
-    Stack->flag = 0;
     return (Stack);
 }
 
@@ -92,8 +91,7 @@ void show_stack(p_storage * storage)
     stack = storage->b;
     while (stack != NULL)
     {
-        ft_putnbr_fd(stack->value, 1);
-        ft_putchar_fd('\n', 1);
+        printf("stack[%d] = %d\n", stack->order, stack->value);
         stack = stack->next;
     }
     printf("---------------\n");
@@ -104,21 +102,41 @@ void remove_top_stack(p_storage **storage, p_stack **top, int *remove_value)
 {
     p_stack *tmp;
 
+	// if (!*top)
+	// 	return ;
+	// if ((*top)->next == NULL)
+	// {
+	// 	*remove_value = (*top)->value;
+	// 	(*top)->prev = NULL;
+	// 	free(*top);
+	// 	*top = NULL;
+	// }
+	// else
+	// {
+	// 	*remove_value = (*top)->value;
+	// 	tmp = *top;
+	// 	*top = (*top)->next;
+	// 	(*top)->prev = NULL;
+	// 	free(tmp);
+	// }
     tmp = (*top);
-	if (tmp->next == NULL)
+	if (tmp != NULL)
 	{
-		*remove_value = tmp->value;
-		(*top)->next = NULL;
-		(*top)->prev = NULL;
-		free(tmp);
+		if (tmp->next == NULL)
+		{
+			*remove_value = tmp->value;
+			(*top)->prev = NULL;
+			free(*top);
+			*top = NULL;
+		}
+		else
+		{
+			*remove_value = tmp->value;
+			(*top) = (*top)->next;
+			(*top)->prev = NULL;
+			free(tmp);
+		}
 	}
-    if (tmp->next != NULL)
-    {
-        *remove_value = tmp->value;
-        (*top) = (*top)->next;
-        (*top)->prev = NULL;
-        free(tmp);
-    }
 }
 
 void remove_end_stack(p_storage **storage, p_stack **top, int *remove_value)

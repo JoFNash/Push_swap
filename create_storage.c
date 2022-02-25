@@ -11,10 +11,7 @@ p_storage	*create_storage(char **argv, int argc)
 	storage->b = NULL;
 	storage->line = NULL;
 	storage->argv = argv;
-	storage->flag = 0;
 	storage->next = 1;
-	storage->mid = 0;
-	storage->max = 0;
 	storage->argc = argc - 1;
 	return (storage);
 }

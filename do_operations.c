@@ -6,6 +6,7 @@
 void do_swap_a(p_storage **storage)
 {
     int tmp_value;
+	int tmp_order;
     p_stack *stack_a;
 
     stack_a = (*storage)->a;
@@ -14,12 +15,16 @@ void do_swap_a(p_storage **storage)
         tmp_value = stack_a->value;
         stack_a->value = stack_a->next->value;
         stack_a->next->value = tmp_value;
+		tmp_order = stack_a->order;
+        stack_a->order = stack_a->next->order;
+        stack_a->next->order = tmp_order;
     }
 }
 
 void do_swap_b(p_storage **storage)
 {
     int tmp_value;
+	int tmp_order;
     p_stack *stack_b;
 
     stack_b = (*storage)->b;
@@ -28,14 +33,16 @@ void do_swap_b(p_storage **storage)
         tmp_value = stack_b->value;
         stack_b->value = stack_b->next->value;
         stack_b->next->value = tmp_value;
+		tmp_order = stack_b->order;
+        stack_b->order = stack_b->next->order;
+        stack_b->next->order = tmp_order;
     }
 }
 
 void do_swap_a_and_b(p_storage **storage)
 {
-    swap_a(storage);
-    swap_b(storage);
-    write(1, "ss\n", 3);
+    do_swap_a(storage);
+    do_swap_b(storage);
 }
 
 void do_push_a(p_storage **storage)
@@ -84,8 +91,8 @@ void do_rotate_b(p_storage **storage)
 
 void do_rotate_a_and_b(p_storage **storage)
 {
-    rotate_a(storage);
-    rotate_b(storage);
+    do_rotate_a(storage);
+    do_rotate_b(storage);
 }
 
 void do_reverse_rotate_a(p_storage **storage)
@@ -112,6 +119,6 @@ void do_reverse_rotate_b(p_storage **storage)
 
 void do_reverse_rotate_a_and_b(p_storage **storage)
 {
-	reverse_rotate_a(storage);
-    reverse_rotate_b(storage);
+	do_reverse_rotate_a(storage);
+    do_reverse_rotate_b(storage);
 }

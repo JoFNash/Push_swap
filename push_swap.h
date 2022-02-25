@@ -11,7 +11,6 @@
     {
         int    value;
         int    order;
-        int    flag;
         struct s_stack *next;
         struct s_stack *prev;
     } p_stack;
@@ -30,10 +29,7 @@
         struct  s_stack *b;
         char    **argv;
         char    *line;
-        int     flag;
         int     next;
-        int     mid;
-        int     max;
         int     argc;
     } p_storage;
 
