@@ -48,46 +48,54 @@ void do_swap_a_and_b(p_storage **storage)
 void do_push_a(p_storage **storage)
 {
     int value_b;
+    int order_b;
 
     if ((*storage)->b)
     {
-        remove_top_stack(storage, &((*storage)->b), &value_b);
-        add_stack_top(storage, &((*storage)->a), value_b);
+        remove_top_stack(storage, &((*storage)->b), &value_b, &order_b);
+        add_stack_top(storage, &((*storage)->a), value_b, order_b);
     }
 }
 
 void do_push_b(p_storage **storage)
 {
     int value_a;
+    int order_a;
 
     if ((*storage)->a)
     {
-        remove_top_stack(storage, &((*storage)->a), &value_a);
-        add_stack_top(storage, &((*storage)->b), value_a);
+        remove_top_stack(storage, &((*storage)->a), &value_a, &order_a);
+        add_stack_top(storage, &((*storage)->b), value_a, order_a);
     }
 }
+
+/* ----------------- */
 
 void do_rotate_a(p_storage **storage)
 {
     int value;
+    int order;
 
     if ((*storage)->a && (*storage)->a->next != NULL)
     {
-        remove_top_stack(storage, &((*storage)->a), &value);
-        add_stack_end(storage, &((*storage)->a), value);
+        remove_top_stack(storage, &((*storage)->a), &value, &order);
+        add_stack_end(storage, &((*storage)->a), value, order);
     }
 }
 
 void do_rotate_b(p_storage **storage)
 {
     int value;
+    int order;
 
     if ((*storage)->b && (*storage)->b->next != NULL)
     {
-        remove_top_stack(storage, &((*storage)->b), &value);
-        add_stack_end(storage, &((*storage)->b), value);
+        remove_top_stack(storage, &((*storage)->b), &value, &order);
+        add_stack_end(storage, &((*storage)->b), value, order);
     }
 }
+
+/* ----------------- */
 
 void do_rotate_a_and_b(p_storage **storage)
 {
@@ -98,22 +106,24 @@ void do_rotate_a_and_b(p_storage **storage)
 void do_reverse_rotate_a(p_storage **storage)
 {
     int value;
+    int order;
 
     if ((*storage)->a && (*storage)->a->next != NULL)
     {
-        remove_end_stack(storage, &((*storage)->a), &value);
-        add_stack_top(storage, &((*storage)->a), value);
+        remove_end_stack(storage, &((*storage)->a), &value, &order);
+        add_stack_top(storage, &((*storage)->a), value, order);
     }
 }
 
 void do_reverse_rotate_b(p_storage **storage)
 {
     int value;
+    int order;
 
     if ((*storage)->b && (*storage)->b->next != NULL)
     {
-        remove_end_stack(storage, &((*storage)->b), &value);
-        add_stack_top(storage, &((*storage)->b), value);
+        remove_end_stack(storage, &((*storage)->b), &value, &order);
+        add_stack_top(storage, &((*storage)->b), value, order);
     }
 }
 

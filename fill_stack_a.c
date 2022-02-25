@@ -51,7 +51,7 @@ void    fill(p_storage **storage, char *str, size_t i)
             error_actions(storage);
         else
         {
-            add_stack_end(storage, &((*storage)->a), number_checked_on_int);
+            add_stack_end(storage, &((*storage)->a), number_checked_on_int, 0);
         }
         str = (*storage)->argv[++i];
     }
