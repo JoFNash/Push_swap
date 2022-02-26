@@ -32,7 +32,11 @@ void	butterfly_sort(p_storage **storage, int deviation)
 		else if ((*storage)->a->order >= count)
 			rotate_a(storage);
 	}
-	show_stack(*storage);
+
+	//show_stack(*storage);
+	//printf("akakakkakaka");
+	//write(1, "Hello", 5);
+
 	butterfly_return_sort(storage);
 }
 
@@ -43,13 +47,9 @@ void	butterfly_return_sort(p_storage **storage)
 
 	while (size_of_stack((*storage)->b) != 0)
 	{
-		printf("size = %d\n", size_of_stack((*storage)->b));
 		show_stack(*storage);
-		sleep(4);
 		max = max_elem_in_stack((*storage)->b);
-		printf("max = %d\n", max_elem_in_stack((*storage)->b));
 		f = elem_upper_middle((*storage)->b, size_of_stack((*storage)->b), max);
-		printf("f = %d\n", f);
 		while ((*storage)->b->order != max)
 		{
 			if (!f)

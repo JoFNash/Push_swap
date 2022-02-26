@@ -70,11 +70,11 @@ int	max_elem_in_stack(p_stack *stack)
 
 	if (stack)
 	{
-		max = stack->value;
+		max = stack->order;
 		while (stack != NULL)
 		{
-			if (stack->value > max)
-				max = stack->value;
+			if (stack->order > max)
+				max = stack->order;
 			stack = stack->next;
 		}
 	}
@@ -108,6 +108,7 @@ int	elem_upper_middle(p_stack *stack, int size, int value)
 	i = 0;
 	if (stack)
 	{
+
 		while (stack && stack->order != value)
 		{
 			stack = stack->next;

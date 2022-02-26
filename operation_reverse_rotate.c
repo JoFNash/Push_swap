@@ -2,7 +2,6 @@
 #include "Libft/libft.h"
 #include "push_swap.h"
 #include "Libft/libft.h"
-#include "stdio.h"
 
 void	reverse_rotate_a(p_storage **storage)
 {
