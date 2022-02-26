@@ -2,7 +2,7 @@
 
 p_storage	*create_storage(char **argv, int argc)
 {
-	p_storage   *storage;
+	p_storage	*storage;
 
 	storage = (p_storage *)malloc(sizeof(p_storage));
 	if (!storage)

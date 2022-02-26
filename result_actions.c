@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void result_actions(p_storage **storage)
+void	result_actions(p_storage **storage)
 {
     /*
     check_line_on_duplicates((*storage)->line);
@@ -13,7 +13,7 @@ void result_actions(p_storage **storage)
     exit(1);
 }
 
-void check_line_on_duplicates(char *line)
+void	check_line_on_duplicates(char *line)
 {
 
 }

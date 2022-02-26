@@ -2,15 +2,15 @@
 #include "Libft/libft.h"
 #include <stdio.h>
 
-void    fill_array(p_storage ** storage)
+void	fill_array(p_storage **storage)
 {
 	int		*array;
-	p_stack *stack;
+	p_stack	*stack;
 	size_t	i;
 
-    array = (int *)malloc(sizeof(int) * (*storage)->argc);
-    if (!array)
-        error_actions(storage);
+	array = (int *)malloc(sizeof(int) * (*storage)->argc);
+	if (!array)
+		error_actions(storage);
 	stack = (*storage)->a;
 	i = 0;
 	while (stack != NULL)
@@ -26,8 +26,8 @@ void    fill_array(p_storage ** storage)
 
 void	assign_order_to_numbers(p_storage **storage, int *array, int size)
 {
-	p_stack **stack;
-	p_stack *tmp;
+	p_stack	**stack;
+	p_stack	*tmp;
 	size_t	i;
 
 	stack = &((*storage)->a);
@@ -72,9 +72,9 @@ void	sort_array(int **array, size_t size)
 	}
 }
 
-void 	print_array(int * array, int n)
+void	print_array(int *array, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	printf("----------\n");

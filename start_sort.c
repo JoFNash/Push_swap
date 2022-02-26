@@ -1,9 +1,9 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void start_sort(p_storage **storage)
+void	start_sort(p_storage **storage)
 {
-	int elems;
+	int	elems;
 
 	elems = (*storage)->argc;
 	if (elems <= 5)

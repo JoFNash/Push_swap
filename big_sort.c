@@ -1,18 +1,17 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void start_big_sort(p_storage **storage)
+void	start_big_sort(p_storage **storage)
 {
 	fill_array(storage);
 	show_stack(*storage);
-
 	if ((*storage)->argc <= 100)
 		butterfly_sort(storage, 15);
 	else
 		butterfly_sort(storage, 30);
 }
 
-void butterfly_sort(p_storage **storage, int deviation)
+void	butterfly_sort(p_storage **storage, int deviation)
 {
 	int		count;
 
@@ -34,11 +33,10 @@ void butterfly_sort(p_storage **storage, int deviation)
 			rotate_a(storage);
 	}
 	show_stack(*storage);
-
 	butterfly_return_sort(storage);
 }
 
-void butterfly_return_sort(p_storage **storage)
+void	butterfly_return_sort(p_storage **storage)
 {
 	int		max;
 	int		f;
@@ -60,4 +58,3 @@ void butterfly_return_sort(p_storage **storage)
 		push_a(storage);
 	}
 }
-

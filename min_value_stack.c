@@ -1,8 +1,8 @@
 #include "push_swap.h"
 
-int min_value_stack(p_stack * stack)
+int	min_value_stack(p_stack * stack)
 {
-	int value;
+	int	value;
 
 	if (stack)
 	{
