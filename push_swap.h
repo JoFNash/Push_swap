@@ -37,17 +37,17 @@ p_storage	*create_storage(char **argv, int argc);
 void		free_storage(p_storage **storage);
 
 /* allowed operations for stacks a and b */
-void		do_swap_a(p_storage **storage);
-void		do_swap_b(p_storage **storage);
-void		do_swap_a_and_b(p_storage **storage);
-void		do_push_a(p_storage **storage);
-void		do_push_b(p_storage **storage);
-void		do_rotate_a(p_storage **storage);
-void		do_rotate_b(p_storage **storage);
-void		do_rotate_a_and_b(p_storage **storage);
-void		do_reverse_rotate_a(p_storage **storage);
-void		do_reverse_rotate_b(p_storage **storage);
-void		do_reverse_rotate_a_and_b(p_storage **storage);
+int		do_swap_a(p_storage **storage);
+int		do_swap_b(p_storage **storage);
+int		do_swap_a_and_b(p_storage **storage);
+int		do_push_a(p_storage **storage);
+int		do_push_b(p_storage **storage);
+int		do_rotate_a(p_storage **storage);
+int		do_rotate_b(p_storage **storage);
+int		do_rotate_a_and_b(p_storage **storage);
+int		do_reverse_rotate_a(p_storage **storage);
+int		do_reverse_rotate_b(p_storage **storage);
+int		do_reverse_rotate_a_and_b(p_storage **storage);
 
 void		swap_a(p_storage **storage);
 void		swap_b(p_storage **storage);

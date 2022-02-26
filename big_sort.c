@@ -44,6 +44,8 @@ void	butterfly_return_sort(p_storage **storage)
 	while (size_of_stack((*storage)->b) != 0)
 	{
 		printf("size = %d\n", size_of_stack((*storage)->b));
+		show_stack(*storage);
+		sleep(4);
 		max = max_elem_in_stack((*storage)->b);
 		printf("max = %d\n", max_elem_in_stack((*storage)->b));
 		f = elem_upper_middle((*storage)->b, size_of_stack((*storage)->b), max);

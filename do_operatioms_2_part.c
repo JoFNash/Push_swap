@@ -2,7 +2,7 @@
 #include "Libft/libft.h"
 #include "stdio.h"
 
-void	do_rotate_a(p_storage **storage)
+int	do_rotate_a(p_storage **storage)
 {
 	int	value;
 	int	order;
@@ -11,10 +11,12 @@ void	do_rotate_a(p_storage **storage)
 	{
 		remove_top_stack(storage, &((*storage)->a), &value, &order);
 		add_stack_end(storage, &((*storage)->a), value, order);
+		return (1);
 	}
+	return (0);
 }
 
-void	do_rotate_b(p_storage **storage)
+int	do_rotate_b(p_storage **storage)
 {
 	int	value;
 	int	order;
@@ -23,16 +25,19 @@ void	do_rotate_b(p_storage **storage)
 	{
 		remove_top_stack(storage, &((*storage)->b), &value, &order);
 		add_stack_end(storage, &((*storage)->b), value, order);
+		return (1);
 	}
+	return (0);
 }
 
-void	do_rotate_a_and_b(p_storage **storage)
+int	do_rotate_a_and_b(p_storage **storage)
 {
-	do_rotate_a(storage);
-	do_rotate_b(storage);
+	if (do_rotate_a(storage) && do_rotate_b(storage))
+		return (1);
+	return (0);
 }
 
-void	do_reverse_rotate_a(p_storage **storage)
+int	do_reverse_rotate_a(p_storage **storage)
 {
 	int	value;
 	int	order;
@@ -41,10 +46,12 @@ void	do_reverse_rotate_a(p_storage **storage)
 	{
 		remove_end_stack(storage, &((*storage)->a), &value, &order);
 		add_stack_top(storage, &((*storage)->a), value, order);
+		return (1);
 	}
+	return (0);
 }
 
-void	do_reverse_rotate_b(p_storage **storage)
+int	do_reverse_rotate_b(p_storage **storage)
 {
 	int	value;
 	int	order;
@@ -53,11 +60,14 @@ void	do_reverse_rotate_b(p_storage **storage)
 	{
 		remove_end_stack(storage, &((*storage)->b), &value, &order);
 		add_stack_top(storage, &((*storage)->b), value, order);
+		return (1);
 	}
+	return (0);
 }
 
-void	do_reverse_rotate_a_and_b(p_storage **storage)
+int	do_reverse_rotate_a_and_b(p_storage **storage)
 {
-	do_reverse_rotate_a(storage);
-	do_reverse_rotate_b(storage);
+	if (do_reverse_rotate_a(storage) && do_reverse_rotate_b(storage))
+		return (1);
+	return (0);
 }

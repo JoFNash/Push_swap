@@ -81,22 +81,43 @@ int	max_elem_in_stack(p_stack *stack)
 	return (max);
 }
 
+// int	elem_upper_middle(p_stack *stack, int size, int value)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	printf("ahaha\n");
+// 	if (stack->order)
+// 		printf("vo blin!\n");
+// 	while (stack->order != value)
+// 	{
+// 		printf("%d - %d\n", stack->order, value);
+// 		stack = stack->next;
+// 		i++;
+// 	}
+// 	printf("okokokok");
+// 	if (i >= size / 2)
+// 		return (1);
+// 	return (0);
+// }
+
 int	elem_upper_middle(p_stack *stack, int size, int value)
 {
 	int	i;
 
 	i = 0;
-	printf("ahaha\n");
-	if (stack->order)
-		printf("vo blin!\n");
-	while (stack->order != value)
+	if (stack)
 	{
-		printf("%d - %d\n", stack->order, value);
-		stack = stack->next;
-		i++;
+		while (stack && stack->order != value)
+		{
+			stack = stack->next;
+			i++;
+		}
 	}
-	printf("okokokok");
 	if (i >= size / 2)
+	{
 		return (1);
-	return (0);
+	}
+	else
+		return (0);
 }

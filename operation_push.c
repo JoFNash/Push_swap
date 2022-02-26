@@ -4,15 +4,14 @@
 #include "Libft/libft.h"
 #include "stdio.h"
 
-/* padaet! */
 void	push_a(p_storage **storage)
 {
-	do_push_a(storage);
-	ft_putstr_fd("pa\n", 1);
+	if (do_push_a(storage))
+		ft_putstr_fd("pa\n", 1);
 }
 
 void	push_b(p_storage **storage)
 {
-	do_push_b(storage);
-	ft_putstr_fd("pb\n", 1);
+	if (do_push_b(storage))
+		ft_putstr_fd("pb\n", 1);
 }
