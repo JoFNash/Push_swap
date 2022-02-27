@@ -21,7 +21,7 @@ void	review(p_storage **storage)
 /* error_actions outputs 'Error' and starts the cleaning of resources */
 void	error_actions(p_storage **storage)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	free_storage(storage);
 	exit(-1);
 }

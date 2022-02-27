@@ -28,7 +28,7 @@ void	assign_order_to_numbers(p_storage **storage, int *array, int size)
 {
 	p_stack	**stack;
 	p_stack	*tmp;
-	size_t	i;
+	int	i;
 
 	stack = &((*storage)->a);
 	i = 0;

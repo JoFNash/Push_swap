@@ -15,6 +15,13 @@ void	fill_stack_a(p_storage **storage)
 	check_duplicates(storage);
 }
 
+int		check_sign(char *string)
+{
+	if (string[0] == '-' && ft_isdigit(string[1]))
+		return (1);
+	return (0);
+}
+
 /* find_errors checks argv on error: invalid characters */
 void	find_errors(p_storage **storage)
 {
@@ -48,7 +55,7 @@ void	fill(p_storage **storage, char *str, size_t i)
 
 	while (str)
 	{
-		number_checked_on_int = ft_atoi(str);
+		number_checked_on_int = atoi_push_swap(str, storage);
 		if (number_checked_on_int > INT_MAX || number_checked_on_int < INT_MIN)
 			error_actions(storage);
 		else
@@ -70,8 +77,7 @@ void	check_duplicates(p_storage **storage)
 		second = first->next;
 		while (second != NULL)
 		{
-			//printf("%d - %d\n", first->value, second->value); 
-			if (first->value == second->value) // there something 'lagalo'
+			if (first->value == second->value)
 			{
 				error_actions(storage);
 			}

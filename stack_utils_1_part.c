@@ -81,20 +81,20 @@ void	show_stack(p_storage *storage)
 {
 	p_stack	*stack;
 
-	//printf("---------------\n");
-	//write(1, "Stack a: \n", 11);
+	printf("---------------\n");
+	write(1, "Stack a: \n", 11);
 	stack = storage->a;
 	while (stack != NULL)
 	{
-		//printf("stack[%d] = %d\n", stack->order, stack->value);
+		printf("stack[%d] = %d\n", stack->order, stack->value);
 		stack = stack->next;
 	}	
-	//write(1, "\nStack b: \n", 12);
+	write(1, "\nStack b: \n", 12);
 	stack = storage->b;
 	while (stack != NULL)
 	{
-		//printf("stack[%d] = %d\n", stack->order, stack->value);
+		printf("stack[%d] = %d\n", stack->order, stack->value);
 		stack = stack->next;
 	}
-	//printf("---------------\n");
+	printf("---------------\n");
 }

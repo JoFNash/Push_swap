@@ -83,7 +83,7 @@ void		remove_top_stack(p_storage **storage, p_stack **top,
 void		remove_end_stack(p_storage **storage, p_stack **top,
 				int *remove_value, int *order);
 int			check_sort_a(p_storage **storage);
-int			atoi_push_swap(char *str, p_storage **storage);
+long long int	atoi_push_swap(const char *nptr, p_storage **storage);
 int			size_of_stack(p_stack *stack);
 int			max_elem_in_stack(p_stack *stack);
 int			elem_upper_middle(p_stack *stack, int size, int value);
@@ -107,5 +107,6 @@ void		fill_array(p_storage **storage);
 void		sort_array(int **array, size_t size);
 void		print_array(int *arrray, int n);
 void		assign_order_to_numbers(p_storage **storage, int *array, int size);
+int			check_sign(char *string);
 
 #endif
