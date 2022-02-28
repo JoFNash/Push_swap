@@ -4,7 +4,6 @@
 void	start_big_sort(p_storage **storage)
 {
 	fill_array(storage);
-	//show_stack(*storage);
 	if ((*storage)->argc <= 100)
 		butterfly_sort(storage, 15);
 	else

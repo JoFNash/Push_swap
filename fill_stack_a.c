@@ -15,13 +15,6 @@ void	fill_stack_a(p_storage **storage)
 	check_duplicates(storage);
 }
 
-int		check_sign(char *string)
-{
-	if (string[0] == '-' && ft_isdigit(string[1]))
-		return (1);
-	return (0);
-}
-
 /* find_errors checks argv on error: invalid characters */
 void	find_errors(p_storage **storage)
 {
@@ -49,21 +42,34 @@ void	find_errors(p_storage **storage)
 	}
 }
 
+//./push_swap "123 -71 32" "0 15 123"
 void	fill(p_storage **storage, char *str, size_t i)
 {
 	long int	number_checked_on_int;
+	int argc;
+	size_t	j;
 
+	argc = 0;
 	while (str)
 	{
-		number_checked_on_int = atoi_push_swap(str, storage);
-		if (number_checked_on_int > INT_MAX || number_checked_on_int < INT_MIN)
-			error_actions(storage);
-		else
+		while (*str)
 		{
+			while (!(j = 0) && *str && *str == ' ')
+					str++;
+			while (*(str + j) && (*(str + j) == '-' || *(str + j) == '+' || ft_isdigit(*(str + j))))
+				j++;
+			if (!*str)
+				break ;
+			number_checked_on_int = atoi_push_swap(str, storage);
+			if (number_checked_on_int > INT_MAX || number_checked_on_int < INT_MIN)
+				error_actions(storage);
 			add_stack_end(storage, &((*storage)->a), number_checked_on_int, 0);
+			argc++;
+			str += j;
 		}
 		str = (*storage)->argv[++i];
 	}
+	(*storage)->argc = argc;
 }
 
 void	check_duplicates(p_storage **storage)

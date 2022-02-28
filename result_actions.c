@@ -10,7 +10,7 @@ void	result_actions(p_storage **storage)
     */
     ft_putstr_fd("\n", 1);
     free_storage(storage);
-    exit(1);
+    exit(0);
 }
 
 void	check_line_on_duplicates(char *line)

@@ -14,4 +14,5 @@ void	start_sort(p_storage **storage)
 	{
 		start_big_sort(storage);
 	}
+	result_actions(storage);
 }
