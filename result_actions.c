@@ -8,7 +8,7 @@ void	result_actions(p_storage **storage)
     if ((*storage)->line)
         ft_putstr_fd((*storage)->line, 1);
     */
-    ft_putstr_fd("\n", 1);
+	//show_stack(*storage);
     free_storage(storage);
     exit(0);
 }

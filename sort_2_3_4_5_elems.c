@@ -23,6 +23,12 @@ void	sort_3_elems(p_storage **storage)
 	do_sort_3_elems(storage, first, second, third);
 }
 
+// 0 2147483647 9487 -2147483647 -2147483648
+// 3 5 4 2 1
+
+// 2147483647 9487 0 -2147483647 -2147483648 
+// 5 4 3 2 1
+
 void	do_sort_3_elems(p_storage **storage, int first, int second, int third)
 {
 	if (first < third && third < second)

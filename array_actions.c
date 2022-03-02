@@ -21,7 +21,7 @@ void	fill_array(p_storage **storage)
 	}
 	sort_array(&array, (*storage)->argc);
 	assign_order_to_numbers(storage, array, (int)((*storage)->argc));
-	//show_stack(*storage);
+	free(array);
 }
 
 void	assign_order_to_numbers(p_storage **storage, int *array, int size)

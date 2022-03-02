@@ -20,16 +20,24 @@ void	free_stack(p_stack **stack)
 	p_stack	*tmp;
 	p_stack	*next;
 
-	tmp = (*stack);
-	next = NULL;
-	if (tmp)
+	// tmp = (*stack);
+	// next = NULL;
+	// if (tmp)
+	// {
+	// 	while (tmp != NULL)
+	// 	{
+	// 		next = tmp->next;
+	// 		free(tmp);
+	// 		tmp = next;
+	// 	}
+	// 	(*stack) = NULL;
+	// }
+	if (!stack && !*stack)
+		return ;
+	while (*stack)
 	{
-		while (tmp != NULL)
-		{
-			next = tmp->next;
-			free(tmp);
-			tmp = next;
-		}
-		(*stack) = NULL;
+		tmp = *stack;
+		*stack = (*stack)->next;
+		free(tmp);
 	}
 }
