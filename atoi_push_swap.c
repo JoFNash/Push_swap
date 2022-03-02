@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   atoi_push_swap.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 21:59:49 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 21:59:50 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "Libft/libft.h"
 
@@ -9,7 +21,7 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-long long int	atoi_push_swap(const char *nptr, p_storage **storage)
+long long int	atoi_push_swap(const char *nptr)
 {
 	long long int	number;
 	int				sign;

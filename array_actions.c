@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   array_actions.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 21:59:43 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 21:59:44 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "Libft/libft.h"
 #include <stdio.h>
@@ -28,7 +40,7 @@ void	assign_order_to_numbers(p_storage **storage, int *array, int size)
 {
 	p_stack	**stack;
 	p_stack	*tmp;
-	int	i;
+	int		i;
 
 	stack = &((*storage)->a);
 	i = 0;

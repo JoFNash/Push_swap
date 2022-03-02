@@ -32,7 +32,7 @@ CC 			= gcc
 
 RM 			= rm -rf
 
-CFLAGS 		= -g # -Wall -Wextra -Werror
+CFLAGS 		= -g -Wall -Wextra -Werror
 
 %.o : %.c	$(HEADER)
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)

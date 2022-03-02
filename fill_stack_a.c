@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill_stack_a.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 22:00:03 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 22:00:03 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "Libft/libft.h"
 
@@ -46,8 +58,8 @@ void	find_errors(p_storage **storage)
 void	fill(p_storage **storage, char *str, size_t i)
 {
 	long int	number_checked_on_int;
-	int argc;
-	size_t	j;
+	int			argc;
+	size_t		j;
 
 	argc = 0;
 	while (str)
@@ -56,12 +68,14 @@ void	fill(p_storage **storage, char *str, size_t i)
 		{
 			while (!(j = 0) && *str && *str == ' ')
 					str++;
-			while (*(str + j) && (*(str + j) == '-' || *(str + j) == '+' || ft_isdigit(*(str + j))))
+			while (*(str + j) && (*(str + j) == '-' ||
+					*(str + j) == '+' || ft_isdigit(*(str + j))))
 				j++;
 			if (!*str)
 				break ;
-			number_checked_on_int = atoi_push_swap(str, storage);
-			if (number_checked_on_int > INT_MAX || number_checked_on_int < INT_MIN)
+			number_checked_on_int = atoi_push_swap(str);
+			if (number_checked_on_int > INT_MAX ||
+					number_checked_on_int < INT_MIN)
 				error_actions(storage);
 			add_stack_end(storage, &((*storage)->a), number_checked_on_int, 0);
 			argc++;

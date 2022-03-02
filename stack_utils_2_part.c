@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils_2_part.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 22:02:23 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 22:02:24 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "Libft/libft.h"
 #include <stdio.h>
 
-void	remove_top_stack(p_storage **storage, p_stack **top, 
-	int *remove_value, int *order)
+void	remove_top_stack(p_stack **top, int *remove_value, int *order)
 {
 	p_stack	*tmp;
 
@@ -29,7 +40,7 @@ void	remove_top_stack(p_storage **storage, p_stack **top,
 	}
 }
 
-void	remove_end_stack(p_storage **storage, p_stack **top, 
+void	remove_end_stack(p_stack **top, 
 	int *remove_value, int *remove_order)
 {
 	p_stack *tmp;
@@ -70,6 +81,7 @@ int	max_elem_in_stack(p_stack *stack)
 {
 	int	max;
 
+	max = 0;
 	if (stack)
 	{
 		max = stack->order;

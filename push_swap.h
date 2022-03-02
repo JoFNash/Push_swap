@@ -79,12 +79,10 @@ void		add_stack_top(p_storage **storage, p_stack **top,
 				int value, int order);
 void		add_stack_end(p_storage **storage, p_stack **top,
 				int value, int order);
-void		remove_top_stack(p_storage **storage, p_stack **top,
-				int *remove_value, int *order);
-void		remove_end_stack(p_storage **storage, p_stack **top,
-				int *remove_value, int *order);
+void		remove_top_stack(p_stack **top, int *remove_value, int *order);
+void		remove_end_stack(p_stack **top, int *remove_value, int *order);
 int			check_sort_a(p_storage **storage);
-long long int	atoi_push_swap(const char *nptr, p_storage **storage);
+long long int	atoi_push_swap(const char *nptr);
 int			size_of_stack(p_stack *stack);
 int			max_elem_in_stack(p_stack *stack);
 int			elem_upper_middle(p_stack *stack, int size, int value);

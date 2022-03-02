@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_operations_1_part.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 22:00:01 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 22:00:01 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "Libft/libft.h"
 #include "stdio.h"
@@ -57,7 +69,7 @@ int	do_push_a(p_storage **storage)
 
 	if ((*storage)->b)
 	{
-		remove_top_stack(storage, &((*storage)->b), &value_b, &order_b);
+		remove_top_stack(&((*storage)->b), &value_b, &order_b);
 		add_stack_top(storage, &((*storage)->a), value_b, order_b);
 		return (1);
 	}
@@ -71,7 +83,7 @@ int	do_push_b(p_storage **storage)
 
 	if ((*storage)->a)
 	{
-		remove_top_stack(storage, &((*storage)->a), &value_a, &order_a);
+		remove_top_stack(&((*storage)->a), &value_a, &order_a);
 		add_stack_top(storage, &((*storage)->b), value_a, order_a);
 		return (1);
 	}

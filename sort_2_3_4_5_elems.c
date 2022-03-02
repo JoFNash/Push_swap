@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_2_3_4_5_elems.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 22:01:01 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 22:01:02 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "Libft/libft.h"
 
@@ -22,12 +34,6 @@ void	sort_3_elems(p_storage **storage)
 	third = stack->value;
 	do_sort_3_elems(storage, first, second, third);
 }
-
-// 0 2147483647 9487 -2147483647 -2147483648
-// 3 5 4 2 1
-
-// 2147483647 9487 0 -2147483647 -2147483648 
-// 5 4 3 2 1
 
 void	do_sort_3_elems(p_storage **storage, int first, int second, int third)
 {
