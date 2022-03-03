@@ -93,8 +93,7 @@ void		start_sort(p_storage **storage);
 void		start_little_sort(p_storage **storage, int elems);
 void		sort_2_elems(p_storage **storage);
 void		sort_3_elems(p_storage **storage);
-void		do_sort_3_elems(p_storage **storage, int first,
-				int second, int third);
+void		do_sort_3_elems(p_storage **storage, int first, int second, int third);
 void		sort_4_elems(p_storage **storage);
 void		sort_5_elems(p_storage **storage);
 void		start_big_sort(p_storage **storage);

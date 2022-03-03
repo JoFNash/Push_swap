@@ -18,10 +18,12 @@ void	fill_stack_a(p_storage **storage)
 	size_t	i;
 	size_t	j;
 	char	*string;
+	int argc;
 
+	argc = (*storage)->argc - 1;
 	i = 1;
 	j = 0;
-	string = (*storage)->argv[i];
+	string = (*storage)->argv[argc];
 	find_errors(storage);
 	fill(storage, string, i);
 	check_duplicates(storage);
@@ -34,7 +36,7 @@ void	find_errors(p_storage **storage)
 	size_t	i;
 
 	i = 1;
-	string = (*storage)->argv[i];
+	string = (*storage)->argv[];
 	while (string)
 	{
 		while (*string)
@@ -60,7 +62,9 @@ void	fill(p_storage **storage, char *str, size_t i)
 	long int	number_checked_on_int;
 	int			argc;
 	size_t		j;
+	int tmp_argc;
 
+	tmp_argc = (*storage)->argc;
 	argc = 0;
 	while (str)
 	{
@@ -77,11 +81,11 @@ void	fill(p_storage **storage, char *str, size_t i)
 			if (number_checked_on_int > INT_MAX ||
 					number_checked_on_int < INT_MIN)
 				error_actions(storage);
-			add_stack_end(storage, &((*storage)->a), number_checked_on_int, 0);
+			add_stack_top(storage, &((*storage)->a), number_checked_on_int, 0);
 			argc++;
 			str += j;
 		}
-		str = (*storage)->argv[++i];
+		str = (*storage)->argv[--tmp_argc];
 	}
 	(*storage)->argc = argc;
 }
