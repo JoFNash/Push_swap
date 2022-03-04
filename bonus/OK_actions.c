@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   little_sort.c                                      :+:      :+:    :+:   */
+/*   OK_actions.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 22:00:10 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 19:20:52 by hsybassi         ###   ########.fr       */
+/*   Created: 2022/03/04 21:15:06 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/04 22:06:48 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "Libft/libft.h"
+#include "push_swap_bonus.h"
+# include "../Libft/libft.h"
 
-void	start_little_sort(t_storage **storage, int elems)
+void	OK_actions(t_storage **storage)
 {
-	fill_array(storage);
-	if (elems == 2)
-		sort_2_elems(storage);
-	else if (elems == 3)
-		sort_3_elems(storage);
-	else if (elems == 4)
-		sort_4_elems(storage);
-	else if (elems == 5)
-		sort_5_elems(storage);
+	ft_putstr_fd("OK\n", 1);
+	free_storage(storage);
+}
+
+void	KO_actions(t_storage **storage)
+{
+	ft_putstr_fd("KO\n", 1);
+	free_storage(storage);
 }

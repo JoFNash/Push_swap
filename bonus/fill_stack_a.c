@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "Libft/libft.h"
+#include "push_swap_bonus.h"
 
 void	fill_stack_a(t_storage **storage)
 {
@@ -60,7 +59,7 @@ void	find_errors(t_storage **storage)
 void	fill(t_storage **storage, char *str, size_t i, size_t j)
 {
 	long int	number_checked_on_int;
-	int argc;
+	int			argc;
 
 	argc = 0;
 	while (str)

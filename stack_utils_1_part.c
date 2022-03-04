@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:08 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:35:43 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:45:34 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 t_stack	*init_stack(int value)
 {
-	struct s_stack	*Stack;
+	t_stack	*Stack;
 
 	Stack = (t_stack *)malloc(sizeof(struct s_stack *));
 	if (!Stack)
@@ -33,7 +33,7 @@ void	add_stack_top(t_storage **storage, t_stack **top, int value, int order)
 	t_stack		*tmp;
 	t_stack		*new_top;
 
-	if (*top == NULL) /* if stack is free */
+	if (*top == NULL)
 	{
 		*top = (t_stack *)malloc(sizeof(t_stack));
 		if (!(*top))

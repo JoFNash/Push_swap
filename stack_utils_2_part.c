@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:02:23 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:36:24 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:45:57 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Libft/libft.h"
 #include <stdio.h>
 
-void	remove_tot_stack(t_stack **top, int *remove_value, int *order)
+void	remove_top_stack(t_stack **top, int *remove_value, int *order)
 {
 	t_stack	*tmp;
 

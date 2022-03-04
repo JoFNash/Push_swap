@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   little_sort.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 22:00:10 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 19:20:52 by hsybassi         ###   ########.fr       */
+/*   Created: 2022/03/04 21:15:11 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/04 21:15:12 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "Libft/libft.h"
+#include "push_swap_bonus.h"
 
-void	start_little_sort(t_storage **storage, int elems)
+int	main(int argc, char **argv)
 {
-	fill_array(storage);
-	if (elems == 2)
-		sort_2_elems(storage);
-	else if (elems == 3)
-		sort_3_elems(storage);
-	else if (elems == 4)
-		sort_4_elems(storage);
-	else if (elems == 5)
-		sort_5_elems(storage);
+	t_storage	*storage;
+
+	storage = NULL;
+	if (argc < 2)
+		return (1);
+	storage = create_storage(argv, argc);
+	review(&storage);
+	return (0);
 }

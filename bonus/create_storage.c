@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   result_actions.c                                   :+:      :+:    :+:   */
+/*   create_storage.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 22:00:54 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 22:00:54 by hsybassi         ###   ########.fr       */
+/*   Created: 2022/03/02 21:59:55 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/02 21:59:55 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "Libft/libft.h"
+#include "push_swap_bonus.h"
 
-void	result_actions(t_storage **storage)
+t_storage	*create_storage(char **argv, int argc)
 {
-	//show_stack(*storage);
-	free_storage(storage);
-	exit(0);
+	t_storage	*storage;
+
+	storage = (t_storage *)malloc(sizeof(t_storage));
+	if (!storage)
+		return (NULL);
+	storage->a = NULL;
+	storage->b = NULL;
+	storage->line = NULL;
+	storage->argv = argv;
+	storage->next = 1;
+	storage->argc = argc - 1;
+	return (storage);
 }

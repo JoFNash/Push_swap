@@ -69,7 +69,7 @@ int	do_push_a(t_storage **storage)
 
 	if ((*storage)->b)
 	{
-		remove_tot_stack(&((*storage)->b), &value_b, &order_b);
+		remove_top_stack(&((*storage)->b), &value_b, &order_b);
 		add_stack_top(storage, &((*storage)->a), value_b, order_b);
 		return (1);
 	}
@@ -83,7 +83,7 @@ int	do_push_b(t_storage **storage)
 
 	if ((*storage)->a)
 	{
-		remove_tot_stack(&((*storage)->a), &value_a, &order_a);
+		remove_top_stack(&((*storage)->a), &value_a, &order_a);
 		add_stack_top(storage, &((*storage)->b), value_a, order_a);
 		return (1);
 	}

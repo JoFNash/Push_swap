@@ -1,8 +1,13 @@
 HEADER		= push_swap.h
 
+HEADER_B	= push_swap_bonus.h
+
 NAME		= push_swap
 
+NAME_BONUS	= checker
+
 LIBFT_PATH  = Libft
+GNL_PATH	= Get_Next_Line
 
 SRCS        = main.c\
               array_actions.c\
@@ -10,7 +15,8 @@ SRCS        = main.c\
 			  big_sort.c\
 			  create_storage.c\
 			  do_operations_1_part.c\
-			  do_operatioms_2_part.c\
+			  do_operations_2_part.c\
+			  do_operations_3_part.c\
 			  fill_stack_a.c\
 			  free_storage.c\
 			  little_sort.c\
@@ -26,13 +32,21 @@ SRCS        = main.c\
 			  stack_utils_2_part.c\
 			  start_sort.c
 
+SRCS_BONUS	= main.c\
+			OK_actions.c\
+			read_instructions.c
+
 OBJS 		= $(SRCS:.c=.o)
+
+OBJS_BONUS 	= $(SRCS_BONUS:.c=.o)
 
 CC 			= gcc
 
 RM 			= rm -rf
 
 CFLAGS 		= -g -Wall -Wextra -Werror
+
+# what should I change here?
 
 %.o : %.c	$(HEADER)
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
