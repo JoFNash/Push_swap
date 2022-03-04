@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:08 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 22:01:09 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:35:43 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "Libft/libft.h"
 #include <stdio.h>
 
-p_stack	*init_stack(int value)
+t_stack	*init_stack(int value)
 {
 	struct s_stack	*Stack;
 
-	Stack = (p_stack *)malloc(sizeof(struct s_stack *));
+	Stack = (t_stack *)malloc(sizeof(struct s_stack *));
 	if (!Stack)
 		return (NULL);
 	Stack->value = value;
@@ -28,14 +28,14 @@ p_stack	*init_stack(int value)
 	return (Stack);
 }
 
-void	add_stack_top(p_storage **storage, p_stack **top, int value, int order)
+void	add_stack_top(t_storage **storage, t_stack **top, int value, int order)
 {
-	p_stack		*tmp;
-	p_stack		*new_top;
+	t_stack		*tmp;
+	t_stack		*new_top;
 
 	if (*top == NULL) /* if stack is free */
 	{
-		*top = (p_stack *)malloc(sizeof(p_stack));
+		*top = (t_stack *)malloc(sizeof(t_stack));
 		if (!(*top))
 			error_actions(storage);
 		(*top)->next = NULL;
@@ -45,7 +45,7 @@ void	add_stack_top(p_storage **storage, p_stack **top, int value, int order)
 	}
 	else
 	{
-		new_top = (p_stack *)malloc(sizeof(p_stack));
+		new_top = (t_stack *)malloc(sizeof(t_stack));
 		if (!new_top)
 			error_actions(storage);
 		tmp = *top;
@@ -57,15 +57,15 @@ void	add_stack_top(p_storage **storage, p_stack **top, int value, int order)
 	}
 }
 
-void	add_stack_end(p_storage **storage, p_stack **top,
+void	add_stack_end(t_storage **storage, t_stack **top,
 		int value, int order)
 {
-	p_stack		*tmp;
-	p_stack		*new_tail;
+	t_stack		*tmp;
+	t_stack		*new_tail;
 
 	if (*top == NULL)
 	{
-		*top = (p_stack *)malloc(sizeof(p_stack));
+		*top = (t_stack *)malloc(sizeof(t_stack));
 		if (!(*top))
 			error_actions(storage);
 		(*top)->next = NULL;
@@ -75,7 +75,7 @@ void	add_stack_end(p_storage **storage, p_stack **top,
 	}
 	else
 	{
-		new_tail = (p_stack *)malloc(sizeof(p_stack));
+		new_tail = (t_stack *)malloc(sizeof(t_stack));
 		if (!new_tail)
 			error_actions(storage);
 		new_tail->value = value;
@@ -89,9 +89,9 @@ void	add_stack_end(p_storage **storage, p_stack **top,
 	}
 }	
 
-void	show_stack(p_storage *storage)
+void	show_stack(t_storage *storage)
 {
-	p_stack	*stack;
+	t_stack	*stack;
 
 	printf("---------------\n");
 	write(1, "Stack a: \n", 11);

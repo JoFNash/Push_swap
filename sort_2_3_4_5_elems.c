@@ -6,22 +6,22 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:01 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 22:01:02 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:35:33 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void	sort_2_elems(p_storage **storage)
+void	sort_2_elems(t_storage **storage)
 {
 	swap_a(storage);
 	result_actions(storage);
 }
 
-void	sort_3_elems(p_storage **storage)
+void	sort_3_elems(t_storage **storage)
 {
-	p_stack	*stack;
+	t_stack	*stack;
 	int		first;
 	int		second;
 	int		third;
@@ -35,7 +35,7 @@ void	sort_3_elems(p_storage **storage)
 	do_sort_3_elems(storage, first, second, third);
 }
 
-void	do_sort_3_elems(p_storage **storage, int first, int second, int third)
+void	do_sort_3_elems(t_storage **storage, int first, int second, int third)
 {
 	if (first < third && third < second)
 	{
@@ -62,10 +62,10 @@ void	do_sort_3_elems(p_storage **storage, int first, int second, int third)
 	//show_stack(*storage);
 }
 
-void	sort_4_elems(p_storage **storage)
+void	sort_4_elems(t_storage **storage)
 {
 	int		min;
-	p_stack	*stack;
+	t_stack	*stack;
 
 	min = min_value_stack((*storage)->a);
 	stack = (*storage)->a;
@@ -85,10 +85,10 @@ void	sort_4_elems(p_storage **storage)
 
 // 9 -7 2 0
 
-void	sort_5_elems(p_storage **storage)
+void	sort_5_elems(t_storage **storage)
 {
 	int		min;
-	p_stack	*stack;
+	t_stack	*stack;
 
 	min = min_value_stack((*storage)->a);
 	stack = (*storage)->a;

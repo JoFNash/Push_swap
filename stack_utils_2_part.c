@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:02:23 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 22:02:24 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:36:24 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "Libft/libft.h"
 #include <stdio.h>
 
-void	remove_top_stack(p_stack **top, int *remove_value, int *order)
+void	remove_tot_stack(t_stack **top, int *remove_value, int *order)
 {
-	p_stack	*tmp;
+	t_stack	*tmp;
 
 	tmp = (*top);
 	if (tmp != NULL)
@@ -40,10 +40,10 @@ void	remove_top_stack(p_stack **top, int *remove_value, int *order)
 	}
 }
 
-void	remove_end_stack(p_stack **top, 
+void	remove_end_stack(t_stack **top,
 	int *remove_value, int *remove_order)
 {
-	p_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *top;
 	if (tmp != NULL)
@@ -60,9 +60,9 @@ void	remove_end_stack(p_stack **top,
 	}
 }
 
-int	size_of_stack(p_stack *stack)
+int	size_of_stack(t_stack *stack)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (!stack)
@@ -77,7 +77,7 @@ int	size_of_stack(p_stack *stack)
 	return (size);
 }
 
-int	max_elem_in_stack(p_stack *stack)
+int	max_elem_in_stack(t_stack *stack)
 {
 	int	max;
 
@@ -95,7 +95,7 @@ int	max_elem_in_stack(p_stack *stack)
 	return (max);
 }
 
- int	elem_upper_middle(p_stack *stack, int size, int value)
+int	elem_upper_middle(t_stack *stack, int size, int value)
 {
 	int	i;
 

@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void	free_storage(p_storage **storage)
+void	free_storage(t_storage **storage)
 {
 	if (storage && *storage)
 	{
@@ -27,9 +27,9 @@ void	free_storage(p_storage **storage)
 	}
 }
 
-void	free_stack(p_stack **stack)
+void	free_stack(t_stack **stack)
 {
-	p_stack	*tmp;
+	t_stack	*tmp;
 
 	if (!stack && !*stack)
 		return ;

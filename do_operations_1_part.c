@@ -15,11 +15,11 @@
 #include "stdio.h"
 
 /* allowed operations for stacks a and b */
-int	do_swap_a(p_storage **storage)
+int	do_swap_a(t_storage **storage)
 {
 	int		tmp_value;
 	int		tmp_order;
-	p_stack	*stack_a;
+	t_stack	*stack_a;
 
 	stack_a = (*storage)->a;
 	if (stack_a && stack_a->next != NULL)
@@ -35,11 +35,11 @@ int	do_swap_a(p_storage **storage)
 	return (0);
 }
 
-int	do_swap_b(p_storage **storage)
+int	do_swap_b(t_storage **storage)
 {
 	int		tmp_value;
 	int		tmp_order;
-	p_stack	*stack_b;
+	t_stack	*stack_b;
 
 	stack_b = (*storage)->b;
 	if (stack_b && stack_b->next != NULL)
@@ -55,35 +55,35 @@ int	do_swap_b(p_storage **storage)
 	return (0);
 }
 
-int	do_swap_a_and_b(p_storage **storage)
+int	do_swap_a_and_b(t_storage **storage)
 {
 	if (do_swap_a(storage) && do_swap_b(storage))
 		return (1);
 	return (0);
 }
 
-int	do_push_a(p_storage **storage)
+int	do_push_a(t_storage **storage)
 {
 	int	value_b;
 	int	order_b;
 
 	if ((*storage)->b)
 	{
-		remove_top_stack(&((*storage)->b), &value_b, &order_b);
+		remove_tot_stack(&((*storage)->b), &value_b, &order_b);
 		add_stack_top(storage, &((*storage)->a), value_b, order_b);
 		return (1);
 	}
 	return (0);
 }
 
-int	do_push_b(p_storage **storage)
+int	do_push_b(t_storage **storage)
 {
 	int	value_a;
 	int	order_a;
 
 	if ((*storage)->a)
 	{
-		remove_top_stack(&((*storage)->a), &value_a, &order_a);
+		remove_tot_stack(&((*storage)->a), &value_a, &order_a);
 		add_stack_top(storage, &((*storage)->b), value_a, order_a);
 		return (1);
 	}

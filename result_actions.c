@@ -13,8 +13,8 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void	result_actions(p_storage **storage)
+void	result_actions(t_storage **storage)
 {
-    free_storage(storage);
-    exit(0);
+	free_storage(storage);
+	exit(0);
 }

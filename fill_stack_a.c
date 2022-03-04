@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void	fill_stack_a(p_storage **storage)
+void	fill_stack_a(t_storage **storage)
 {
 	size_t	i;
 	size_t	j;
@@ -25,29 +25,29 @@ void	fill_stack_a(p_storage **storage)
 	j = 0;
 	string = (*storage)->argv[argc];
 	find_errors(storage);
-	fill(storage, string, i);
+	fill(storage, string, i, j);
 	check_duplicates(storage);
 }
 
 /* find_errors checks argv on error: invalid characters */
-void	find_errors(p_storage **storage)
+void	find_errors(t_storage **storage)
 {
 	char	*string;
 	size_t	i;
 
 	i = 1;
-	string = (*storage)->argv[];
+	string = (*storage)->argv[(*storage)->argc - 1];
 	while (string)
 	{
 		while (*string)
 		{
 			if (*string == ' ' || ft_isdigit(*string))
 				string++;
-			else if (*string == '-' && ft_isdigit(*(string + 1)) &&
-				(string == (*storage)->argv[i] || *(string - 1) == ' '))
+			else if (*string == '-' && ft_isdigit(*(string + 1))
+				&& (string == (*storage)->argv[i] || *(string - 1) == ' '))
 				string++;
-			else if (*string == '+' && ft_isdigit(*(string + 1)) &&
-				(string == (*storage)->argv[i] || *(string - 1) == ' '))
+			else if (*string == '+' && ft_isdigit(*(string + 1))
+				&& (string == (*storage)->argv[i] || *(string - 1) == ' '))
 				string++;
 			else
 				error_actions(storage);
@@ -57,12 +57,11 @@ void	find_errors(p_storage **storage)
 }
 
 //./push_swap "123 -71 32" "0 15 123"
-void	fill(p_storage **storage, char *str, size_t i)
+void	fill(t_storage **storage, char *str, size_t i, size_t j)
 {
-	long int	number_checked_on_int;
+	long int	check_int_n;
 	int			argc;
-	size_t		j;
-	int tmp_argc;
+	int			tmp_argc;
 
 	tmp_argc = (*storage)->argc;
 	argc = 0;
@@ -70,18 +69,17 @@ void	fill(p_storage **storage, char *str, size_t i)
 	{
 		while (*str)
 		{
-			while (!(j = 0) && *str && *str == ' ')
+			while (j != 0 && *str && *str == ' ')
 					str++;
-			while (*(str + j) && (*(str + j) == '-' ||
-					*(str + j) == '+' || ft_isdigit(*(str + j))))
+			while (*(str + j) && (*(str + j) == '-'
+					|| *(str + j) == '+' || ft_isdigit(*(str + j))))
 				j++;
 			if (!*str)
 				break ;
-			number_checked_on_int = atoi_push_swap(str);
-			if (number_checked_on_int > INT_MAX ||
-					number_checked_on_int < INT_MIN)
+			check_int_n = atoi_push_swap(str);
+			if (check_int_n > INT_MAX || check_int_n < INT_MIN)
 				error_actions(storage);
-			add_stack_top(storage, &((*storage)->a), number_checked_on_int, 0);
+			add_stack_top(storage, &((*storage)->a), check_int_n, 0);
 			argc++;
 			str += j;
 		}
@@ -90,10 +88,10 @@ void	fill(p_storage **storage, char *str, size_t i)
 	(*storage)->argc = argc;
 }
 
-void	check_duplicates(p_storage **storage)
+void	check_duplicates(t_storage **storage)
 {
-	p_stack	*first;
-	p_stack	*second;
+	t_stack	*first;
+	t_stack	*second;
 
 	first = (*storage)->a;
 	while (first != NULL)

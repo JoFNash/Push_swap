@@ -6,14 +6,14 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:59:51 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 21:59:53 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:31:28 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void	start_big_sort(p_storage **storage)
+void	start_big_sort(t_storage **storage)
 {
 	fill_array(storage);
 	if ((*storage)->argc <= 100)
@@ -22,7 +22,7 @@ void	start_big_sort(p_storage **storage)
 		butterfly_sort(storage, 30);
 }
 
-void	butterfly_sort(p_storage **storage, int deviation)
+void	butterfly_sort(t_storage **storage, int deviation)
 {
 	int		count;
 
@@ -46,7 +46,7 @@ void	butterfly_sort(p_storage **storage, int deviation)
 	butterfly_return_sort(storage);
 }
 
-void	butterfly_return_sort(p_storage **storage)
+void	butterfly_return_sort(t_storage **storage)
 {
 	int		max;
 	int		f;

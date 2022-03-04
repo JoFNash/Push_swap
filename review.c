@@ -15,7 +15,7 @@
 #include <stdio.h>
 
 /* review calls fill_stack_a() and check_sort_a() to check if stack a is sorted */
-void	review(p_storage **storage)
+void	review(t_storage **storage)
 {
 	if (!storage)
 		return ;
@@ -31,17 +31,17 @@ void	review(p_storage **storage)
 }
 
 /* error_actions outputs 'Error' and starts the cleaning of resources */
-void	error_actions(p_storage **storage)
+void	error_actions(t_storage **storage)
 {
 	write(2, "Error\n", 6);
 	free_storage(storage);
 	exit(-1);
 }
 
-int	check_sort_a(p_storage **storage)
+int	check_sort_a(t_storage **storage)
 {
-	p_stack		*first;
-	p_stack		*second;
+	t_stack		*first;
+	t_stack		*second;
 
 	first = (*storage)->a;
 	second = (*storage)->a;

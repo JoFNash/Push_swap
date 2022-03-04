@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_operatioms_2_part.c                             :+:      :+:    :+:   */
+/*   do_operations_2_part.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:59:58 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 22:03:42 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:32:19 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Libft/libft.h"
 #include "stdio.h"
 
-int	do_rotate_a(p_storage **storage)
+int	do_rotate_a(t_storage **storage)
 {
 	int	value;
 	int	order;
@@ -28,7 +28,7 @@ int	do_rotate_a(p_storage **storage)
 	return (0);
 }
 
-int	do_rotate_b(p_storage **storage)
+int	do_rotate_b(t_storage **storage)
 {
 	int	value;
 	int	order;
@@ -42,7 +42,7 @@ int	do_rotate_b(p_storage **storage)
 	return (0);
 }
 
-int	do_rotate_a_and_b(p_storage **storage)
+int	do_rotate_a_and_b(t_storage **storage)
 {
 	if (do_rotate_a(storage) && do_rotate_b(storage))
 		return (1);

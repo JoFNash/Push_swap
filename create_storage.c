@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-p_storage	*create_storage(char **argv, int argc)
+t_storage	*create_storage(char **argv, int argc)
 {
-	p_storage	*storage;
+	t_storage	*storage;
 
-	storage = (p_storage *)malloc(sizeof(p_storage));
+	storage = (t_storage *)malloc(sizeof(t_storage));
 	if (!storage)
 		return (NULL);
 	storage->a = NULL;

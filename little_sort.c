@@ -6,14 +6,14 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:00:10 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 22:00:11 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:33:20 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "Libft/libft.h"
 
-void	start_little_sort(p_storage **storage, int elems)
+void	start_little_sort(t_storage **storage, int elems)
 {
 	if (elems == 2)
 		sort_2_elems(storage);

@@ -15,7 +15,7 @@
 
 int	main(int argc, char **argv)
 {
-	p_storage	*storage;
+	t_storage	*storage;
 
 	storage = NULL;
 	if (argc < 2)

@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:59:43 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 21:59:44 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:31:12 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "Libft/libft.h"
 #include <stdio.h>
 
-void	fill_array(p_storage **storage)
+void	fill_array(t_storage **storage)
 {
 	int		*array;
-	p_stack	*stack;
+	t_stack	*stack;
 	size_t	i;
 
 	array = (int *)malloc(sizeof(int) * (*storage)->argc);
@@ -36,10 +36,10 @@ void	fill_array(p_storage **storage)
 	free(array);
 }
 
-void	assign_order_to_numbers(p_storage **storage, int *array, int size)
+void	assign_order_to_numbers(t_storage **storage, int *array, int size)
 {
-	p_stack	**stack;
-	p_stack	*tmp;
+	t_stack	**stack;
+	t_stack	*tmp;
 	int		i;
 
 	stack = &((*storage)->a);
