@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_instructions_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 21:15:11 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/05 18:24:27 by hsybassi         ###   ########.fr       */
+/*   Created: 2022/03/05 18:26:04 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/05 19:13:18 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+void	read_instructions(t_storage **storage)
 {
-	t_storage	*storage;
+	char	*commands;
+	int fd;
 
-	storage = NULL;
-	if (argc < 2)
-		return (1);
-	storage = create_storage(argv, argc);
-	review(&storage);
-	return (0);
+	fd = 0;
+	while (commands = get_next_line(fd))
+	{
+		/* pass */
+	}
+	printf("%s", commands);
+	(void)storage;
 }

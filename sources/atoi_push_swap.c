@@ -6,12 +6,12 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:59:49 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/05 15:53:07 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:47:05 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include "../Libft/libft.h"
+#include "push_swap.h"
+#include "Libft/libft.h"
 
 static int	ft_isspace(int c)
 {

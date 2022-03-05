@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operation_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 21:15:11 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/05 18:24:27 by hsybassi         ###   ########.fr       */
+/*   Created: 2022/03/02 22:00:36 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/04 15:33:54 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
+#include "Libft/libft.h"
+#include "push_swap.h"
+#include "Libft/libft.h"
+#include "stdio.h"
 
-int	main(int argc, char **argv)
+void	push_a(t_storage **storage)
 {
-	t_storage	*storage;
+	if (do_push_a(storage))
+		ft_putstr_fd("pa\n", 1);
+}
 
-	storage = NULL;
-	if (argc < 2)
-		return (1);
-	storage = create_storage(argv, argc);
-	review(&storage);
-	return (0);
+void	push_b(t_storage **storage)
+{
+	if (do_push_b(storage))
+		ft_putstr_fd("pb\n", 1);
 }

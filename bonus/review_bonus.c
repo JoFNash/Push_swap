@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
-#include "../Libft/libft.h"
+#include "../includes/push_swap_bonus.h"
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
+#include <stdio.h>
 
-/* review calls fill_stack_a() and check_sort_a() to check if stack a is sorted */
 void	review(t_storage **storage)
 {
 	if (!storage)
@@ -21,7 +22,7 @@ void	review(t_storage **storage)
 	fill_stack_a(storage);
 	if (check_sort_a(storage) == 1)
 	{
-		OK_actions(storage);
+		OK_actions(storage); /*  New!  */
 	}
 	else
 	{
@@ -29,7 +30,6 @@ void	review(t_storage **storage)
 	}
 }
 
-/* error_actions outputs 'Error' and starts the cleaning of resources */
 void	error_actions(t_storage **storage)
 {
 	write(2, "Error\n", 6);

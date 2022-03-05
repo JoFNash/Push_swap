@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils_1_part.c                               :+:      :+:    :+:   */
+/*   stack_utils_1_part_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:08 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/05 15:52:04 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/05 18:49:45 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include "../Libft/libft.h"
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 t_stack	*init_stack(int value)

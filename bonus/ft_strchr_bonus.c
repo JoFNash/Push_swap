@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_storage.c                                   :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 21:59:55 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/02 21:59:55 by hsybassi         ###   ########.fr       */
+/*   Created: 2021/10/22 17:18:01 by hsybassi          #+#    #+#             */
+/*   Updated: 2021/10/22 17:18:01 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+# include "../libft/libft.h"
 
-t_storage	*create_storage(char **argv, int argc)
+char	*ft_strchr(const char *s, int c)
 {
-	t_storage	*storage;
+	size_t	i;
 
-	storage = (t_storage *)malloc(sizeof(t_storage));
-	if (!storage)
-		return (NULL);
-	storage->a = NULL;
-	storage->b = NULL;
-	storage->line = NULL;
-	storage->argv = argv;
-	storage->next = 1;
-	storage->argc = argc - 1;
-	return (storage);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)(&s[i]));
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)(&s[i]));
+	return (NULL);
 }
