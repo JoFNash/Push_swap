@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "Libft/libft.h"
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 /* review calls fill_stack_a() and check_sort_a() to check if stack a is sorted */

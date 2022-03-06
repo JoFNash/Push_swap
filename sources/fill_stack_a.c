@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "Libft/libft.h"
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
 
 void	fill_stack_a(t_storage **storage)
 {

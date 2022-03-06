@@ -14,14 +14,23 @@
 
 void	read_instructions(t_storage **storage)
 {
-	char	*commands;
-	int fd;
+	char	*command;
+	int		fd;
+	int		number;
 
 	fd = 0;
-	while (commands = get_next_line(fd))
+	command = get_next_line(fd);
+	while (command)
 	{
-		/* pass */
+		number = get_number_of_operation(command);
+		if (!number)
+		{
+			printf("ahahaha");
+			error_actions(storage);
+		}
+		else
+			do_operation_with_stack(number, storage);
+		command = get_next_line(fd);
 	}
-	printf("%s", commands);
-	(void)storage;
+	print_result(storage);
 }
