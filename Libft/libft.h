@@ -6,15 +6,13 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 21:17:43 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/10/22 18:06:03 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:52:41 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-// #include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
 
