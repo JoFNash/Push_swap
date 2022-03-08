@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_bonus.c                                 :+:      :+:    :+:   */
+/*   last_elems_order_1_and_0.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 21:32:50 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/08 18:55:13 by hsybassi         ###   ########.fr       */
+/*   Created: 2022/03/08 18:39:50 by hsybassi          #+#    #+#             */
+/*   Updated: 2022/03/08 18:40:12 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	last_elems_order_1_and_0(t_storage **storage)
 {
-	char			*str;
-	unsigned int	i;
-	unsigned int	j;
-
-	if (!s1 || !s2)
-		return (NULL);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	j = i;
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		str[j++] = s2[i];
-		i++;
-	}
-	str[j] = '\0';
-	return (str);
+	reverse_rotate_a(storage);
+	push_b(storage);
+	reverse_rotate_a(storage);
+	push_b(storage);
+	sort_3_elems(storage);
+	push_a(storage);
+	push_a(storage);
 }

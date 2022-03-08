@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:59:43 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:31:12 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:52:12 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,6 @@ void	sort_array(int **array, size_t size)
 			}
 			j++;
 		}
-		i++;
-	}
-}
-
-void	print_array(int *array, int n)
-{
-	int	i;
-
-	i = 0;
-	printf("----------\n");
-	while (i < n)
-	{
-		printf("array[%d] = %d\n", i, array[i]);
 		i++;
 	}
 }

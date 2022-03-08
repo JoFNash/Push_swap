@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 18:26:04 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/08 17:18:17 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 20:57:48 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	read_instructions(t_storage **storage)
 
 	fd = 0;
 	command = get_next_line(fd);
-
 	while (command)
 	{
 		number = get_number_of_operation(command);

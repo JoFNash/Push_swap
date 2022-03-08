@@ -14,7 +14,6 @@
 #include "../libft/libft.h"
 #include <stdio.h>
 
-/* review calls fill_stack_a() and check_sort_a() to check if stack a is sorted */
 void	review(t_storage **storage)
 {
 	if (!storage)
@@ -30,7 +29,6 @@ void	review(t_storage **storage)
 	}
 }
 
-/* error_actions outputs 'Error' and starts the cleaning of resources */
 void	error_actions(t_storage **storage)
 {
 	write(2, "Error\n", 6);
@@ -51,7 +49,7 @@ int	check_sort_a(t_storage **storage)
 	{
 		second = second->next;
 		if (first->value >= second->value)
-			break;
+			break ;
 		first = first->next;
 	}
 	if (second->next == NULL && first->value <= second->value)

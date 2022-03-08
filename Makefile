@@ -30,6 +30,7 @@ SRCS        = sources/array_actions.c\
 			  sources/stack_utils_1_part.c\
 			  sources/stack_utils_2_part.c\
 			  sources/start_sort.c\
+			  sources/last_elems_order_1_and_0.c\
 			  sources/main.c\
 
 				
@@ -49,7 +50,7 @@ SRCS_BONUS	= 	bonus/main_bonus.c\
 				bonus/ft_strlen_bonus.c\
 				bonus/ft_substr_bonus.c\
 				bonus/get_next_line_bonus.c\
-				bonus/OK_actions_bonus.c\
+				bonus/ok_actions_bonus.c\
 				bonus/read_instructions_bonus.c\
 				bonus/review_bonus.c\
 				bonus/stack_utils_1_part_bonus.c\

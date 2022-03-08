@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:02:23 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:45:57 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:04:14 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ int	elem_upper_middle(t_stack *stack, int size, int value)
 	i = 0;
 	if (stack)
 	{
-
 		while (stack && stack->order != value)
 		{
 			stack = stack->next;

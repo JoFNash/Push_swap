@@ -6,14 +6,14 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 21:24:28 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/08 17:17:54 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 20:57:17 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap_bonus.h"
 #include "../includes/push_swap.h"
 
-int get_number_of_operation(char *command)
+int	get_number_of_operation(char *command)
 {
 	if (!ft_memcmp(command, "sa\n", ft_strlen("sa\n")))
 		return (1);
@@ -40,7 +40,7 @@ int get_number_of_operation(char *command)
 	return (0);
 }
 
-void do_operation_with_stack(int number, t_storage **storage)
+void	do_operation_with_stack(int number, t_storage **storage)
 {
 	if (number == 1)
 		do_swap_a(storage);
@@ -66,9 +66,9 @@ void do_operation_with_stack(int number, t_storage **storage)
 		do_reverse_rotate_a_and_b(storage);
 }
 
-void print_result(t_storage **storage)
+void	print_result(t_storage **storage)
 {
 	if (check_sort_a(storage) && !((*storage)->b))
-		OK_actions(storage);
-	KO_actions(storage);
+		ok_actions(storage);
+	ko_actions(storage);
 }

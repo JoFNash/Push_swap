@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:01 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:35:33 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:01:33 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	do_sort_3_elems(t_storage **storage, int first, int second, int third)
 		swap_a(storage);
 		reverse_rotate_a(storage);
 	}
-	//show_stack(*storage);
 }
 
 void	sort_4_elems(t_storage **storage)
@@ -83,25 +82,29 @@ void	sort_4_elems(t_storage **storage)
 	push_a(storage);
 }
 
-// 9 -7 2 0
-
 void	sort_5_elems(t_storage **storage)
 {
 	int		min;
 	t_stack	*stack;
 
-	min = min_value_stack((*storage)->a);
-	stack = (*storage)->a;
-	while (stack != NULL)
+	if ((*storage)->a->next->next->next->order == 1
+		&& (*storage)->a->next->next->next->next->order == 0)
+		last_elems_order_1_and_0(storage);
+	else
 	{
-		if (stack->value == min)
+		min = min_value_stack((*storage)->a);
+		stack = (*storage)->a;
+		while (stack != NULL)
 		{
-			push_b(storage);
-			break ;
+			if (stack->value == min)
+			{
+				push_b(storage);
+				break ;
+			}
+			stack = stack->next;
+			rotate_a(storage);
 		}
-		stack = stack->next;
-		rotate_a(storage);
+		sort_4_elems(storage);
+		push_a(storage);
 	}
-	sort_4_elems(storage);
-	push_a(storage);
 }

@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:08 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:45:34 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 20:56:16 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 t_stack	*init_stack(int value)
 {
-	t_stack	*Stack;
+	t_stack	*stack;
 
-	Stack = (t_stack *)malloc(sizeof(struct s_stack *));
-	if (!Stack)
+	stack = (t_stack *)malloc(sizeof(struct s_stack *));
+	if (!stack)
 		return (NULL);
-	Stack->value = value;
-	Stack->prev = NULL;
-	Stack->next = NULL;
-	Stack->order = 0;
-	return (Stack);
+	stack->value = value;
+	stack->prev = NULL;
+	stack->next = NULL;
+	stack->order = 0;
+	return (stack);
 }
 
 void	add_stack_top(t_storage **storage, t_stack **top, int value, int order)
@@ -34,15 +34,7 @@ void	add_stack_top(t_storage **storage, t_stack **top, int value, int order)
 	t_stack		*new_top;
 
 	if (*top == NULL)
-	{
-		*top = (t_stack *)malloc(sizeof(t_stack));
-		if (!(*top))
-			error_actions(storage);
-		(*top)->next = NULL;
-		(*top)->prev = NULL;
-		(*top)->value = value;
-		(*top)->order = order;
-	}
+		create_stack(storage, top, value, order);
 	else
 	{
 		new_top = (t_stack *)malloc(sizeof(t_stack));
@@ -64,15 +56,7 @@ void	add_stack_end(t_storage **storage, t_stack **top,
 	t_stack		*new_tail;
 
 	if (*top == NULL)
-	{
-		*top = (t_stack *)malloc(sizeof(t_stack));
-		if (!(*top))
-			error_actions(storage);
-		(*top)->next = NULL;
-		(*top)->prev = NULL;
-		(*top)->value = value;
-		(*top)->order = order;
-	}
+		create_stack(storage, top, value, order);
 	else
 	{
 		new_tail = (t_stack *)malloc(sizeof(t_stack));
@@ -88,6 +72,17 @@ void	add_stack_end(t_storage **storage, t_stack **top,
 		new_tail->next = NULL;
 	}
 }	
+
+void	create_stack(t_storage **storage, t_stack **top, int value, int order)
+{
+	*top = (t_stack *)malloc(sizeof(t_stack));
+	if (!(*top))
+		error_actions(storage);
+	(*top)->next = NULL;
+	(*top)->prev = NULL;
+	(*top)->value = value;
+	(*top)->order = order;
+}
 
 void	show_stack(t_storage *storage)
 {

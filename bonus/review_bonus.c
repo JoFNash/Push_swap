@@ -22,7 +22,7 @@ void	review(t_storage **storage)
 	fill_stack_a(storage);
 	if (check_sort_a(storage) == 1)
 	{
-		OK_actions(storage); /*  New!  */
+		ok_actions(storage);
 	}
 	else
 	{
@@ -50,7 +50,7 @@ int	check_sort_a(t_storage **storage)
 	{
 		second = second->next;
 		if (first->value >= second->value)
-			break;
+			break ;
 		first = first->next;
 	}
 	if (second->next == NULL && first->value <= second->value)
