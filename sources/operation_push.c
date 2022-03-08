@@ -6,13 +6,12 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:00:36 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:33:54 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:53:03 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
-#include "stdio.h"
 
 void	push_a(t_storage **storage)
 {

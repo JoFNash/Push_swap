@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_operations_2_part.c                             :+:      :+:    :+:   */
+/*   do_operations_2_part_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:59:58 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/04 15:32:19 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:52:25 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
-#include "stdio.h"
 
 int	do_rotate_a(t_storage **storage)
 {

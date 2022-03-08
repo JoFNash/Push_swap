@@ -12,9 +12,7 @@
 
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
-#include "stdio.h"
 
-/* allowed operations for stacks a and b */
 int	do_swap_a(t_storage **storage)
 {
 	int		tmp_value;

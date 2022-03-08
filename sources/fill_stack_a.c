@@ -29,7 +29,6 @@ void	fill_stack_a(t_storage **storage)
 	check_duplicates(storage);
 }
 
-/* find_errors checks argv on error: invalid characters */
 void	find_errors(t_storage **storage)
 {
 	char	*string;

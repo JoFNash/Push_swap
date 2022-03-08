@@ -6,13 +6,12 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:08 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/08 20:57:00 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:52:33 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
-#include <stdio.h>
 
 t_stack	*init_stack(int value)
 {

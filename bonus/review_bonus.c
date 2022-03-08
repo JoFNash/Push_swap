@@ -13,7 +13,6 @@
 #include "../includes/push_swap_bonus.h"
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
-#include <stdio.h>
 
 void	review(t_storage **storage)
 {
