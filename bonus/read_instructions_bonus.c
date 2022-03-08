@@ -6,13 +6,12 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 18:26:04 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/07 22:07:28 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:18:17 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap_bonus.h"
 
-#include "get_next_line.h" 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -23,16 +22,14 @@ void	read_instructions(t_storage **storage)
 	int		fd;
 	int		number;
 
-	//fd = open("olya.txt", O_RDONLY);
-
 	fd = 0;
 	command = get_next_line(fd);
+
 	while (command)
 	{
 		number = get_number_of_operation(command);
 		if (!number)
 		{
-			printf("ahahaha");
 			error_actions(storage);
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 21:24:28 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/07 21:24:29 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:17:54 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,50 +15,28 @@
 
 int get_number_of_operation(char *command)
 {
-	if (memcmp(command, "sa\n", ft_strlen("sa\n")))
+	if (!ft_memcmp(command, "sa\n", ft_strlen("sa\n")))
 		return (1);
-	else if (memcmp(command, "sb\n", ft_strlen("sb\n")))
-		return (1);
-	else if (memcmp(command, "ss\n", ft_strlen("ss\n")))
-		return (1);
-	else if (memcmp(command, "pa\n", ft_strlen("pa\n")))
-		return (1);
-	else if (memcmp(command, "pb\n", ft_strlen("pb\n")))
-		return (1);
-	else if (memcmp(command, "ra\n", ft_strlen("ra\n")))
-		return (1);
-	else if (memcmp(command, "rb\n", ft_strlen("rb\n")))
-		return (1);
-	else if (memcmp(command, "rr\n", ft_strlen("rr\n")))
-		return (1);
-	else if (memcmp(command, "rra\n", ft_strlen("rra\n")))
-		return (1);
-	else if (memcmp(command, "rrb\n", ft_strlen("rrb\n")))
-		return (1);
-	else if (memcmp(command, "rrr\n", ft_strlen("rrr\n")))
-		return (1);
-
-	// else if (command == "sb\n")
-	// 	return (2);
-	// else if (command == "ss\n")
-	// 	return (3);
-	// else if (command == "pa\n")
-	// 	return (4);
-	// else if (command == "pb\n")
-	// 	return (5);
-	// else if (command == "ra\n")
-	// 	return (6);
-	// else if (command == "rb\n")
-	// 	return (7);
-	// else if (command == "rr\n")
-	// 	return (8);
-	// else if (command == "rra\n")
-	// 	return (9);
-	// else if (command == "rrb\n")
-	// 	return (10);
-	// else if (command == "rrr\n")
-	// 	return (11);
-	printf("'%s'", command);
+	else if (!ft_memcmp(command, "sb\n", ft_strlen("sb\n")))
+		return (2);
+	else if (!ft_memcmp(command, "ss\n", ft_strlen("ss\n")))
+		return (3);
+	else if (!ft_memcmp(command, "pa\n", ft_strlen("pa\n")))
+		return (4);
+	else if (!ft_memcmp(command, "pb\n", ft_strlen("pb\n")))
+		return (5);
+	else if (!ft_memcmp(command, "ra\n", ft_strlen("ra\n")))
+		return (6);
+	else if (!ft_memcmp(command, "rb\n", ft_strlen("rb\n")))
+		return (7);
+	else if (!ft_memcmp(command, "rr\n", ft_strlen("rr\n")))
+		return (8);
+	else if (!ft_memcmp(command, "rra\n", ft_strlen("rra\n")))
+		return (9);
+	else if (!ft_memcmp(command, "rrb\n", ft_strlen("rrb\n")))
+		return (10);
+	else if (!ft_memcmp(command, "rrr\n", ft_strlen("rrr\n")))
+		return (11);
 	return (0);
 }
 
