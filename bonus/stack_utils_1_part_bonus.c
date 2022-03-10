@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 22:01:08 by hsybassi          #+#    #+#             */
-/*   Updated: 2022/03/08 21:52:33 by hsybassi         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:44:38 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,18 @@ void	add_stack_end(t_storage **storage, t_stack **top,
 		new_tail->prev = tmp;
 		new_tail->next = NULL;
 	}
-}	
+}
+
+void	create_stack(t_storage **storage, t_stack **top, int value, int order)
+{
+	*top = (t_stack *)malloc(sizeof(t_stack));
+	if (!(*top))
+		error_actions(storage);
+	(*top)->next = NULL;
+	(*top)->prev = NULL;
+	(*top)->value = value;
+	(*top)->order = order;
+}
 
 /*
 void	show_stack(t_storage *storage)
