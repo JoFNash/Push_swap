@@ -1,4 +1,4 @@
-HiADER		= libft.h
+HEADER		= libft.h
 
 NAME		= libft.a
 
